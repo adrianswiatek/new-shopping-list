@@ -662,12 +662,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A729861327C161B20074CD74 /* NewShoppingList-macOS */,
-				A729862927C161B30074CD74 /* NewShoppingList-macOSTests */,
-				A729863327C161B30074CD74 /* NewShoppingList-macOSUITests */,
 				A729864927C1622A0074CD74 /* NewShoppingList-iOS */,
 				A729865D27C1622B0074CD74 /* NewShoppingList-iOSTests */,
 				A729866727C1622C0074CD74 /* NewShoppingList-iOSUITests */,
+				A729861327C161B20074CD74 /* NewShoppingList-macOS */,
+				A729862927C161B30074CD74 /* NewShoppingList-macOSTests */,
+				A729863327C161B30074CD74 /* NewShoppingList-macOSUITests */,
 				A729867B27C1625B0074CD74 /* NewShoppingList-watchOS */,
 				A729868327C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */,
 				A729869D27C1625D0074CD74 /* NewShoppingList-watchOSTests */,

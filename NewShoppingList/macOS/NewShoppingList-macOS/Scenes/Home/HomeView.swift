@@ -1,22 +1,17 @@
 import SwiftUI
 
-protocol HomeDisplayLogic {
-
-}
-
 struct HomeView: View {
-    var interactor: HomeBusinessLogic?
+    @ObservedObject
+    private var controller: Controller
+
+    init(controller: Controller) {
+        _controller = ObservedObject(wrappedValue: controller)
+    }
 
     var body: some View {
         NavigationView {
-            Text("Side Bar")
+            SideBar(controller)
             Text("Main view")
         }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }

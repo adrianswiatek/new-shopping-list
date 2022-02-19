@@ -42,7 +42,12 @@
 		A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C727C164820074CD74 /* HomeInteractor.swift */; };
 		A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C927C164BA0074CD74 /* HomePresenter.swift */; };
 		A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CC27C1662D0074CD74 /* HomeModel.swift */; };
-		A72986D027C1674C0074CD74 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* HomeViewModel.swift */; };
+		A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* HomeViewController.swift */; };
+		A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D127C167A00074CD74 /* Home+SideBar.swift */; };
+		A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D327C168D00074CD74 /* Home+AddListModal.swift */; };
+		A72986D827C174640074CD74 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D727C174640074CD74 /* HomeRepository.swift */; };
+		A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DC27C178650074CD74 /* ShoppingList.swift */; };
+		A72986DF27C179990074CD74 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DE27C179990074CD74 /* Id.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +181,12 @@
 		A72986C727C164820074CD74 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A72986C927C164BA0074CD74 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		A72986CC27C1662D0074CD74 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		A72986CF27C1674C0074CD74 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A72986CF27C1674C0074CD74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A72986D127C167A00074CD74 /* Home+SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+SideBar.swift"; sourceTree = "<group>"; };
+		A72986D327C168D00074CD74 /* Home+AddListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+AddListModal.swift"; sourceTree = "<group>"; };
+		A72986D727C174640074CD74 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		A72986DC27C178650074CD74 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		A72986DE27C179990074CD74 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +286,6 @@
 		A729861627C161B20074CD74 /* NewShoppingList-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				A72986C227C164320074CD74 /* Scenes */,
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
 				A729861927C161B20074CD74 /* ContentView.swift */,
 				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
@@ -284,6 +293,7 @@
 				A729861B27C161B30074CD74 /* Assets.xcassets */,
 				A729862227C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld */,
 				A729861D27C161B30074CD74 /* Preview Content */,
+				A72986C227C164320074CD74 /* Scenes */,
 			);
 			path = "NewShoppingList-macOS";
 			sourceTree = "<group>";
@@ -446,8 +456,10 @@
 				A72986CC27C1662D0074CD74 /* HomeModel.swift */,
 				A72986C927C164BA0074CD74 /* HomePresenter.swift */,
 				A72986C427C164460074CD74 /* HomeView.swift */,
-				A72986CF27C1674C0074CD74 /* HomeViewModel.swift */,
+				A72986CF27C1674C0074CD74 /* HomeViewController.swift */,
+				A72986D927C1753E0074CD74 /* Models */,
 				A72986CE27C1673B0074CD74 /* ViewExtensions */,
+				A72986D627C174550074CD74 /* Workers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -455,8 +467,27 @@
 		A72986CE27C1673B0074CD74 /* ViewExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				A72986D127C167A00074CD74 /* Home+SideBar.swift */,
+				A72986D327C168D00074CD74 /* Home+AddListModal.swift */,
 			);
 			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		A72986D627C174550074CD74 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				A72986D727C174640074CD74 /* HomeRepository.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		A72986D927C1753E0074CD74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A72986DE27C179990074CD74 /* Id.swift */,
+				A72986DC27C178650074CD74 /* ShoppingList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -801,13 +832,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */,
-				A72986D027C1674C0074CD74 /* HomeViewModel.swift in Sources */,
+				A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */,
+				A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */,
+				A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */,
 				A729862127C161B30074CD74 /* Persistence.swift in Sources */,
 				A729861A27C161B20074CD74 /* ContentView.swift in Sources */,
 				A729862427C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld in Sources */,
 				A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */,
+				A72986D827C174640074CD74 /* HomeRepository.swift in Sources */,
 				A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */,
+				A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */,
 				A72986C627C164750074CD74 /* HomeView.swift in Sources */,
+				A72986DF27C179990074CD74 /* Id.swift in Sources */,
 				A729861827C161B20074CD74 /* NewShoppingList_macOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

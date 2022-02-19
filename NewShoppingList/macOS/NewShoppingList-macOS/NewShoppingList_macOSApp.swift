@@ -6,12 +6,24 @@ struct NewShoppingList_macOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            rootView()
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .commands {
             SidebarCommands()
         }
+    }
+
+    private func rootView() -> some View {
+        let interactor = HomeInteractor(homeRepository: CoreDataHomeRepository())
+        let presenter = HomePresenter()
+        let controller = HomeView.Controller()
+
+        interactor.presenter = presenter
+        presenter.viewController = controller
+        controller.interactor = interactor
+
+        return HomeView(controller: controller)
     }
 }

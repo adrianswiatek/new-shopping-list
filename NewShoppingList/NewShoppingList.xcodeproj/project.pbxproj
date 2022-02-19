@@ -38,6 +38,11 @@
 		A72986AD27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */; };
 		A72986AF27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */; };
 		A72986B227C1625D0074CD74 /* NewShoppingList-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A72986C627C164750074CD74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C427C164460074CD74 /* HomeView.swift */; };
+		A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C727C164820074CD74 /* HomeInteractor.swift */; };
+		A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C927C164BA0074CD74 /* HomePresenter.swift */; };
+		A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CC27C1662D0074CD74 /* HomeModel.swift */; };
+		A72986D027C1674C0074CD74 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +172,11 @@
 		A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-watchOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITests.swift; sourceTree = "<group>"; };
 		A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A72986C427C164460074CD74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A72986C727C164820074CD74 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		A72986C927C164BA0074CD74 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		A72986CC27C1662D0074CD74 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		A72986CF27C1674C0074CD74 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,11 +276,12 @@
 		A729861627C161B20074CD74 /* NewShoppingList-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
-				A729861927C161B20074CD74 /* ContentView.swift */,
-				A729861B27C161B30074CD74 /* Assets.xcassets */,
-				A729862027C161B30074CD74 /* Persistence.swift */,
+				A72986C227C164320074CD74 /* Scenes */,
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
+				A729861927C161B20074CD74 /* ContentView.swift */,
+				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
+				A729862027C161B30074CD74 /* Persistence.swift */,
+				A729861B27C161B30074CD74 /* Assets.xcassets */,
 				A729862227C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld */,
 				A729861D27C161B30074CD74 /* Preview Content */,
 			);
@@ -418,6 +429,34 @@
 				A72986AB27C1625D0074CD74 /* NewShoppingList-watchOSUITests */,
 			);
 			path = watchOS;
+			sourceTree = "<group>";
+		};
+		A72986C227C164320074CD74 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A72986C327C164360074CD74 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A72986C327C164360074CD74 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A72986C727C164820074CD74 /* HomeInteractor.swift */,
+				A72986CC27C1662D0074CD74 /* HomeModel.swift */,
+				A72986C927C164BA0074CD74 /* HomePresenter.swift */,
+				A72986C427C164460074CD74 /* HomeView.swift */,
+				A72986CF27C1674C0074CD74 /* HomeViewModel.swift */,
+				A72986CE27C1673B0074CD74 /* ViewExtensions */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A72986CE27C1673B0074CD74 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -761,9 +800,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */,
+				A72986D027C1674C0074CD74 /* HomeViewModel.swift in Sources */,
 				A729862127C161B30074CD74 /* Persistence.swift in Sources */,
 				A729861A27C161B20074CD74 /* ContentView.swift in Sources */,
 				A729862427C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld in Sources */,
+				A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */,
+				A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */,
+				A72986C627C164750074CD74 /* HomeView.swift in Sources */,
 				A729861827C161B20074CD74 /* NewShoppingList_macOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -935,13 +979,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS/NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-macOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/NewShoppingList-macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -962,6 +1006,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1017,13 +1062,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS/NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-macOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/NewShoppingList-macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1038,6 +1083,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

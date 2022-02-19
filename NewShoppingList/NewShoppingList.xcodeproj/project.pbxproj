@@ -25,6 +25,19 @@
 		A729866327C1622B0074CD74 /* NewShoppingList_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866227C1622B0074CD74 /* NewShoppingList_iOSTests.swift */; };
 		A729866D27C1622C0074CD74 /* NewShoppingList_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866C27C1622C0074CD74 /* NewShoppingList_iOSUITests.swift */; };
 		A729866F27C1622C0074CD74 /* NewShoppingList_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866E27C1622C0074CD74 /* NewShoppingList_iOSUITestsLaunchTests.swift */; };
+		A729867F27C1625C0074CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A729867E27C1625C0074CD74 /* Assets.xcassets */; };
+		A729868527C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A729868427C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A729868A27C1625C0074CD74 /* NewShoppingListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729868927C1625C0074CD74 /* NewShoppingListApp.swift */; };
+		A729868C27C1625C0074CD74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729868B27C1625C0074CD74 /* ContentView.swift */; };
+		A729868E27C1625C0074CD74 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729868D27C1625C0074CD74 /* NotificationController.swift */; };
+		A729869027C1625C0074CD74 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729868F27C1625C0074CD74 /* NotificationView.swift */; };
+		A729869227C1625C0074CD74 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729869127C1625C0074CD74 /* ComplicationController.swift */; };
+		A729869427C1625D0074CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A729869327C1625D0074CD74 /* Assets.xcassets */; };
+		A729869727C1625D0074CD74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A729869627C1625D0074CD74 /* Preview Assets.xcassets */; };
+		A72986A327C1625D0074CD74 /* NewShoppingList_watchOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986A227C1625D0074CD74 /* NewShoppingList_watchOSTests.swift */; };
+		A72986AD27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */; };
+		A72986AF27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */; };
+		A72986B227C1625D0074CD74 /* NewShoppingList-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +69,60 @@
 			remoteGlobalIDString = A729864927C1622A0074CD74;
 			remoteInfo = "NewShoppingList-iOS";
 		};
+		A729868627C1625C0074CD74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A729860A27C161780074CD74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A729868327C1625C0074CD74;
+			remoteInfo = "NewShoppingList-watchOS WatchKit Extension";
+		};
+		A729869F27C1625D0074CD74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A729860A27C161780074CD74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A729868327C1625C0074CD74;
+			remoteInfo = "NewShoppingList-watchOS WatchKit Extension";
+		};
+		A72986A927C1625D0074CD74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A729860A27C161780074CD74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A729867B27C1625B0074CD74;
+			remoteInfo = "NewShoppingList-watchOS";
+		};
+		A72986B027C1625D0074CD74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A729860A27C161780074CD74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A729867B27C1625B0074CD74;
+			remoteInfo = "NewShoppingList-watchOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A72986B627C1625D0074CD74 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A729868527C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72986BA27C1625D0074CD74 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A72986B227C1625D0074CD74 /* NewShoppingList-watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A729861427C161B20074CD74 /* NewShoppingList-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewShoppingList-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +150,23 @@
 		A729866827C1622C0074CD74 /* NewShoppingList-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A729866C27C1622C0074CD74 /* NewShoppingList_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_iOSUITests.swift; sourceTree = "<group>"; };
 		A729866E27C1622C0074CD74 /* NewShoppingList_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewShoppingList-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A729867E27C1625C0074CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A729868427C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NewShoppingList-watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A729868927C1625C0074CD74 /* NewShoppingListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingListApp.swift; sourceTree = "<group>"; };
+		A729868B27C1625C0074CD74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A729868D27C1625C0074CD74 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A729868F27C1625C0074CD74 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		A729869127C1625C0074CD74 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		A729869327C1625D0074CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A729869627C1625D0074CD74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A729869827C1625D0074CD74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A729869927C1625D0074CD74 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A729869E27C1625D0074CD74 /* NewShoppingList-watchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-watchOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72986A227C1625D0074CD74 /* NewShoppingList_watchOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSTests.swift; sourceTree = "<group>"; };
+		A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-watchOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITests.swift; sourceTree = "<group>"; };
+		A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +212,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A729868127C1625C0074CD74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A729869B27C1625D0074CD74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72986A527C1625D0074CD74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,6 +241,7 @@
 			children = (
 				A729867927C162310074CD74 /* iOS */,
 				A729864527C161C30074CD74 /* macOS */,
+				A72986C127C1626D0074CD74 /* watchOS */,
 				A729861527C161B20074CD74 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +255,10 @@
 				A729864A27C1622A0074CD74 /* NewShoppingList-iOS.app */,
 				A729865E27C1622B0074CD74 /* NewShoppingList-iOSTests.xctest */,
 				A729866827C1622C0074CD74 /* NewShoppingList-iOSUITests.xctest */,
+				A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */,
+				A729868427C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex */,
+				A729869E27C1625D0074CD74 /* NewShoppingList-watchOSTests.xctest */,
+				A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +360,66 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		A729867D27C1625B0074CD74 /* NewShoppingList-watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				A729867E27C1625C0074CD74 /* Assets.xcassets */,
+			);
+			path = "NewShoppingList-watchOS";
+			sourceTree = "<group>";
+		};
+		A729868827C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A729868927C1625C0074CD74 /* NewShoppingListApp.swift */,
+				A729868B27C1625C0074CD74 /* ContentView.swift */,
+				A729868D27C1625C0074CD74 /* NotificationController.swift */,
+				A729868F27C1625C0074CD74 /* NotificationView.swift */,
+				A729869127C1625C0074CD74 /* ComplicationController.swift */,
+				A729869327C1625D0074CD74 /* Assets.xcassets */,
+				A729869827C1625D0074CD74 /* Info.plist */,
+				A729869927C1625D0074CD74 /* PushNotificationPayload.apns */,
+				A729869527C1625D0074CD74 /* Preview Content */,
+			);
+			path = "NewShoppingList-watchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A729869527C1625D0074CD74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A729869627C1625D0074CD74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A72986A127C1625D0074CD74 /* NewShoppingList-watchOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A72986A227C1625D0074CD74 /* NewShoppingList_watchOSTests.swift */,
+			);
+			path = "NewShoppingList-watchOSTests";
+			sourceTree = "<group>";
+		};
+		A72986AB27C1625D0074CD74 /* NewShoppingList-watchOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */,
+				A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */,
+			);
+			path = "NewShoppingList-watchOSUITests";
+			sourceTree = "<group>";
+		};
+		A72986C127C1626D0074CD74 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				A729867D27C1625B0074CD74 /* NewShoppingList-watchOS */,
+				A729868827C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */,
+				A72986A127C1625D0074CD74 /* NewShoppingList-watchOSTests */,
+				A72986AB27C1625D0074CD74 /* NewShoppingList-watchOSUITests */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,10 +483,12 @@
 				A729864627C1622A0074CD74 /* Sources */,
 				A729864727C1622A0074CD74 /* Frameworks */,
 				A729864827C1622A0074CD74 /* Resources */,
+				A72986BA27C1625D0074CD74 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A72986B127C1625D0074CD74 /* PBXTargetDependency */,
 			);
 			name = "NewShoppingList-iOS";
 			productName = "NewShoppingList-iOS";
@@ -360,6 +531,76 @@
 			productReference = A729866827C1622C0074CD74 /* NewShoppingList-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A729867B27C1625B0074CD74 /* NewShoppingList-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72986B727C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOS" */;
+			buildPhases = (
+				A729867A27C1625B0074CD74 /* Resources */,
+				A72986B627C1625D0074CD74 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A729868727C1625C0074CD74 /* PBXTargetDependency */,
+			);
+			name = "NewShoppingList-watchOS";
+			productName = "NewShoppingList-watchOS";
+			productReference = A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A729868327C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72986B327C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOS WatchKit Extension" */;
+			buildPhases = (
+				A729868027C1625C0074CD74 /* Sources */,
+				A729868127C1625C0074CD74 /* Frameworks */,
+				A729868227C1625C0074CD74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NewShoppingList-watchOS WatchKit Extension";
+			productName = "NewShoppingList-watchOS WatchKit Extension";
+			productReference = A729868427C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		A729869D27C1625D0074CD74 /* NewShoppingList-watchOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72986BB27C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOSTests" */;
+			buildPhases = (
+				A729869A27C1625D0074CD74 /* Sources */,
+				A729869B27C1625D0074CD74 /* Frameworks */,
+				A729869C27C1625D0074CD74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A72986A027C1625D0074CD74 /* PBXTargetDependency */,
+			);
+			name = "NewShoppingList-watchOSTests";
+			productName = "NewShoppingList-watchOSTests";
+			productReference = A729869E27C1625D0074CD74 /* NewShoppingList-watchOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A72986A727C1625D0074CD74 /* NewShoppingList-watchOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A72986BE27C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOSUITests" */;
+			buildPhases = (
+				A72986A427C1625D0074CD74 /* Sources */,
+				A72986A527C1625D0074CD74 /* Frameworks */,
+				A72986A627C1625D0074CD74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A72986AA27C1625D0074CD74 /* PBXTargetDependency */,
+			);
+			name = "NewShoppingList-watchOSUITests";
+			productName = "NewShoppingList-watchOSUITests";
+			productReference = A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -392,6 +633,20 @@
 						CreatedOnToolsVersion = 13.2;
 						TestTargetID = A729864927C1622A0074CD74;
 					};
+					A729867B27C1625B0074CD74 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					A729868327C1625C0074CD74 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					A729869D27C1625D0074CD74 = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = A729868327C1625C0074CD74;
+					};
+					A72986A727C1625D0074CD74 = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = A729867B27C1625B0074CD74;
+					};
 				};
 			};
 			buildConfigurationList = A729860D27C161780074CD74 /* Build configuration list for PBXProject "NewShoppingList" */;
@@ -413,6 +668,10 @@
 				A729864927C1622A0074CD74 /* NewShoppingList-iOS */,
 				A729865D27C1622B0074CD74 /* NewShoppingList-iOSTests */,
 				A729866727C1622C0074CD74 /* NewShoppingList-iOSUITests */,
+				A729867B27C1625B0074CD74 /* NewShoppingList-watchOS */,
+				A729868327C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */,
+				A729869D27C1625D0074CD74 /* NewShoppingList-watchOSTests */,
+				A72986A727C1625D0074CD74 /* NewShoppingList-watchOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -458,6 +717,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A729866627C1622C0074CD74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A729867A27C1625B0074CD74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A729867F27C1625C0074CD74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A729868227C1625C0074CD74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A729869727C1625D0074CD74 /* Preview Assets.xcassets in Resources */,
+				A729869427C1625D0074CD74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A729869C27C1625D0074CD74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72986A627C1625D0074CD74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,6 +813,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A729868027C1625C0074CD74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A729868E27C1625C0074CD74 /* NotificationController.swift in Sources */,
+				A729868C27C1625C0074CD74 /* ContentView.swift in Sources */,
+				A729869227C1625C0074CD74 /* ComplicationController.swift in Sources */,
+				A729868A27C1625C0074CD74 /* NewShoppingListApp.swift in Sources */,
+				A729869027C1625C0074CD74 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A729869A27C1625D0074CD74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72986A327C1625D0074CD74 /* NewShoppingList_watchOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72986A427C1625D0074CD74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72986AD27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift in Sources */,
+				A72986AF27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -545,6 +864,26 @@
 			isa = PBXTargetDependency;
 			target = A729864927C1622A0074CD74 /* NewShoppingList-iOS */;
 			targetProxy = A729866927C1622C0074CD74 /* PBXContainerItemProxy */;
+		};
+		A729868727C1625C0074CD74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A729868327C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */;
+			targetProxy = A729868627C1625C0074CD74 /* PBXContainerItemProxy */;
+		};
+		A72986A027C1625D0074CD74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A729868327C1625C0074CD74 /* NewShoppingList-watchOS WatchKit Extension */;
+			targetProxy = A729869F27C1625D0074CD74 /* PBXContainerItemProxy */;
+		};
+		A72986AA27C1625D0074CD74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A729867B27C1625B0074CD74 /* NewShoppingList-watchOS */;
+			targetProxy = A72986A927C1625D0074CD74 /* PBXContainerItemProxy */;
+		};
+		A72986B127C1625D0074CD74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A729867B27C1625B0074CD74 /* NewShoppingList-watchOS */;
+			targetProxy = A72986B027C1625D0074CD74 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1438,6 +1777,600 @@
 			};
 			name = Release;
 		};
+		A72986B427C1625D0074CD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NewShoppingList-watchOS WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NewShoppingList-watchOS WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		A72986B527C1625D0074CD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NewShoppingList-watchOS WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NewShoppingList-watchOS WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		A72986B827C1625D0074CD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = NewShoppingList_watchOS_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "NewShoppingList-watchOS";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "pl.aswiatek.NewShoppingList-iOS";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		A72986B927C1625D0074CD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = NewShoppingList_watchOS_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "NewShoppingList-watchOS";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "pl.aswiatek.NewShoppingList-iOS";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		A72986BC27C1625D0074CD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.NewShoppingList-watchOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewShoppingList-watchOS WatchKit Extension.appex/NewShoppingList-watchOS WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		A72986BD27C1625D0074CD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.NewShoppingList-watchOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewShoppingList-watchOS WatchKit Extension.appex/NewShoppingList-watchOS WatchKit Extension";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		A72986BF27C1625D0074CD74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.NewShoppingList-watchOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "NewShoppingList-watchOS";
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		A72986C027C1625D0074CD74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q924VJ4PLT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.aswiatek.NewShoppingList-iOS.NewShoppingList-watchOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "NewShoppingList-watchOS";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1500,6 +2433,42 @@
 			buildConfigurations = (
 				A729867727C1622C0074CD74 /* Debug */,
 				A729867827C1622C0074CD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72986B327C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72986B427C1625D0074CD74 /* Debug */,
+				A72986B527C1625D0074CD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72986B727C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72986B827C1625D0074CD74 /* Debug */,
+				A72986B927C1625D0074CD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72986BB27C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72986BC27C1625D0074CD74 /* Debug */,
+				A72986BD27C1625D0074CD74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A72986BE27C1625D0074CD74 /* Build configuration list for PBXNativeTarget "NewShoppingList-watchOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A72986BF27C1625D0074CD74 /* Debug */,
+				A72986C027C1625D0074CD74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

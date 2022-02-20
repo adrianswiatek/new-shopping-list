@@ -17,7 +17,7 @@ extension HomeView {
         }
 
         var body: some View {
-            VStack {
+            VStack(alignment: .leading) {
                 title
                 Spacer()
                 form
@@ -25,7 +25,7 @@ extension HomeView {
                 buttonsBar
             }
             .padding()
-            .frame(width: 300, height: 150)
+            .frame(width: 300)
         }
 
         private var title: some View {
@@ -37,6 +37,8 @@ extension HomeView {
                 TextField("List name", text: $listName)
                     .textFieldStyle(.roundedBorder)
             }
+            .padding(12)
+            .border(Color(.sRGB, white: 1, opacity: 0.15), width: 1)
         }
 
         private var buttonsBar: some View {
@@ -45,18 +47,25 @@ extension HomeView {
                     dismiss()
                 } label: {
                     Text("Cancel")
+                        .frame(width: 50)
                 }
                 .keyboardShortcut(.cancelAction)
 
+                Spacer()
+
                 Button {
-                    controller.addList(withName: listName)
+                    withAnimation {
+                        controller.addList(withName: listName)
+                    }
                     dismiss()
                 } label: {
                     Text("Save")
+                        .frame(width: 50)
                 }
-                .keyboardShortcut(.defaultAction)
+                .keyboardShortcut(.return)
                 .disabled(listName.isEmpty)
             }
+            .padding(.top, 8)
         }
     }
 }

@@ -5,11 +5,11 @@ enum Home {
         }
 
         struct Resposne {
-            let lists: [ShoppingList]
+
         }
 
         struct ViewModel {
-            let lists: [ShoppingList]
+
         }
     }
 
@@ -19,11 +19,25 @@ enum Home {
         }
 
         struct Response {
+
+        }
+
+        struct ViewModel {
+
+        }
+    }
+
+    struct FetchLists {
+        struct Request {
+
+        }
+
+        struct Response {
             let lists: [ShoppingList]
         }
 
         struct ViewModel {
-            var lists: [ShoppingList]
+            let lists: [ShoppingList]
         }
     }
 }

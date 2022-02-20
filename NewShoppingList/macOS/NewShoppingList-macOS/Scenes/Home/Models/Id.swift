@@ -11,8 +11,12 @@ public struct Id<T> {
         Id<T>(UUID())
     }
 
-    public func asString() -> String {
-        uuid.uuidString
+    public static func fromUUid(_ uuid: UUID) -> Id<T> {
+        Id<T>(uuid)
+    }
+
+    public func toUuid() -> UUID {
+        uuid
     }
 }
 

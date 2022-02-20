@@ -12,8 +12,12 @@ struct ShoppingList: Identifiable {
 
 extension ShoppingList {
     final class Factory {
-        static func new(withName listName: String) -> ShoppingList {
-            ShoppingList(.new(), listName)
+        static func new(withName name: String) -> ShoppingList {
+            ShoppingList(.new(), name)
+        }
+
+        static func fromRaw(id: UUID, name: String) -> ShoppingList {
+            ShoppingList(.fromUUid(id), name)
         }
     }
 }

@@ -48,6 +48,13 @@
 		A72986D827C174640074CD74 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D727C174640074CD74 /* HomeRepository.swift */; };
 		A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DC27C178650074CD74 /* ShoppingList.swift */; };
 		A72986DF27C179990074CD74 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DE27C179990074CD74 /* Id.swift */; };
+		A7EB752527C2813E00874CAA /* Main-macOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */; };
+		A7EB752827C282CD00874CAA /* CoreDataHomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */; };
+		A7EB752E27C2867600874CAA /* ShoppingListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */; };
+		A7EB753227C296EF00874CAA /* NSManagedObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */; };
+		A7EB753527C2A0B300874CAA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753427C2A0B300874CAA /* CloudKit.framework */; };
+		A7EB753727C2A0EB00874CAA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */; };
+		A7EB753C27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +194,13 @@
 		A72986D727C174640074CD74 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		A72986DC27C178650074CD74 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		A72986DE27C179990074CD74 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
+		A7EB752427C2813E00874CAA /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeRepository.swift; sourceTree = "<group>"; };
+		A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntity.swift; sourceTree = "<group>"; };
+		A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtensions.swift; sourceTree = "<group>"; };
+		A7EB753427C2A0B300874CAA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHomeModelChangesListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +208,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EB753527C2A0B300874CAA /* CloudKit.framework in Frameworks */,
+				A7EB753727C2A0EB00874CAA /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +279,7 @@
 				A729864527C161C30074CD74 /* macOS */,
 				A72986C127C1626D0074CD74 /* watchOS */,
 				A729861527C161B20074CD74 /* Products */,
+				A7EB753327C2A0B300874CAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +308,7 @@
 				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
 				A729862027C161B30074CD74 /* Persistence.swift */,
 				A729861B27C161B30074CD74 /* Assets.xcassets */,
+				A7EB752A27C2860F00874CAA /* Infrastructure */,
 				A729862227C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld */,
 				A729861D27C161B30074CD74 /* Preview Content */,
 				A72986C227C164320074CD74 /* Scenes */,
@@ -488,6 +506,43 @@
 				A72986DC27C178650074CD74 /* ShoppingList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A7EB752A27C2860F00874CAA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752B27C2861700874CAA /* CoreData */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A7EB752B27C2861700874CAA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */,
+				A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */,
+				A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */,
+				A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */,
+				A7EB753027C2867F00874CAA /* Model */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A7EB753027C2867F00874CAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7EB753327C2A0B300874CAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */,
+				A7EB753427C2A0B300874CAA /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -834,13 +889,18 @@
 				A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */,
 				A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */,
 				A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */,
+				A7EB752827C282CD00874CAA /* CoreDataHomeRepository.swift in Sources */,
+				A7EB752E27C2867600874CAA /* ShoppingListEntity.swift in Sources */,
 				A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */,
 				A729862127C161B30074CD74 /* Persistence.swift in Sources */,
 				A729861A27C161B20074CD74 /* ContentView.swift in Sources */,
 				A729862427C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld in Sources */,
+				A7EB753227C296EF00874CAA /* NSManagedObjectExtensions.swift in Sources */,
 				A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */,
 				A72986D827C174640074CD74 /* HomeRepository.swift in Sources */,
+				A7EB752527C2813E00874CAA /* Main-macOS.xcdatamodeld in Sources */,
 				A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */,
+				A7EB753C27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift in Sources */,
 				A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */,
 				A72986C627C164750074CD74 /* HomeView.swift in Sources */,
 				A72986DF27C179990074CD74 /* Id.swift in Sources */,
@@ -2575,6 +2635,16 @@
 			);
 			currentVersion = A729865827C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodel */;
 			path = NewShoppingList_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7EB752427C2813E00874CAA /* Main.xcdatamodel */,
+			);
+			currentVersion = A7EB752427C2813E00874CAA /* Main.xcdatamodel */;
+			path = "Main-macOS.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

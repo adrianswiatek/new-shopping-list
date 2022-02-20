@@ -4,6 +4,7 @@ import Foundation
 protocol HomeDisplayLogic: AnyObject {
     func addList(viewModel: Home.AddList.ViewModel)
     func deleteList(viewModel: Home.DeleteList.ViewModel)
+    func fetchLists(viewModel: Home.FetchLists.ViewModel)
 }
 
 extension HomeView {
@@ -19,7 +20,7 @@ extension HomeView {
         }
 
         func addList(viewModel: Home.AddList.ViewModel) {
-            lists = viewModel.lists
+
         }
 
         func deleteList(_ list: ShoppingList?) {
@@ -30,6 +31,15 @@ extension HomeView {
         }
 
         func deleteList(viewModel: Home.DeleteList.ViewModel) {
+
+        }
+
+        func fetchLists() {
+            let request = Home.FetchLists.Request()
+            interactor?.fetchLists(request: request)
+        }
+
+        func fetchLists(viewModel: Home.FetchLists.ViewModel) {
             lists = viewModel.lists
         }
     }

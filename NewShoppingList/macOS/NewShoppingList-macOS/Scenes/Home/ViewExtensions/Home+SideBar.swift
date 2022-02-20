@@ -6,6 +6,13 @@ extension HomeView {
         private var controller: Controller
 
         @State
+        private var selectedList: ShoppingList? {
+            didSet {
+                print(selectedList ?? "nil")
+            }
+        }
+
+        @State
         private var isAddListModalVisible: Bool = false
 
         init(_ controller: Controller) {
@@ -15,28 +22,50 @@ extension HomeView {
         var body: some View {
             VStack {
                 List(controller.lists) { list in
-                    NavigationLink {
-                        Text(list.name)
-                    } label: {
+                    NavigationLink(list.name, tag: list, selection: $selectedList) {
                         Text(list.name)
                     }
                 }
                 .listStyle(.inset)
                 .toolbar {
                     ToolbarItem {
+                        Text("LISTS")
+                            .foregroundColor(.secondary)
+                    }
+
+                    ToolbarItem {
                         Button {
                             isAddListModalVisible = true
                         } label: {
                             Image(systemName: "plus")
-                            Text("Add List")
+                        }
+                    }
+
+                    ToolbarItem {
+                        Button {
+                            withAnimation {
+                                controller.deleteList(selectedList)
+                            }
+                        } label: {
+                            Image(systemName: "minus")
+                        }
+                        .disabled(selectedList == nil)
+                    }
+
+                    ToolbarItem {
+                        Button {
+                            controller.fetchLists()
+                        } label: {
+                            Image(systemName: "arrow.triangle.2.circlepath")
                         }
                     }
                 }
             }
-            .frame(minWidth: 200)
+            .frame(minWidth: 270)
             .sheet(isPresented: $isAddListModalVisible) {
                 AddListModal(controller)
             }
+            .onAppear(perform: controller.fetchLists)
         }
     }
 }

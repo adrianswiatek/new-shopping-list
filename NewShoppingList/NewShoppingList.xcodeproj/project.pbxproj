@@ -38,6 +38,23 @@
 		A72986AD27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */; };
 		A72986AF27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */; };
 		A72986B227C1625D0074CD74 /* NewShoppingList-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A72986C627C164750074CD74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C427C164460074CD74 /* HomeView.swift */; };
+		A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C727C164820074CD74 /* HomeInteractor.swift */; };
+		A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C927C164BA0074CD74 /* HomePresenter.swift */; };
+		A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CC27C1662D0074CD74 /* HomeModel.swift */; };
+		A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* HomeViewController.swift */; };
+		A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D127C167A00074CD74 /* Home+SideBar.swift */; };
+		A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D327C168D00074CD74 /* Home+AddListModal.swift */; };
+		A72986D827C174640074CD74 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D727C174640074CD74 /* HomeRepository.swift */; };
+		A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DC27C178650074CD74 /* ShoppingList.swift */; };
+		A72986DF27C179990074CD74 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DE27C179990074CD74 /* Id.swift */; };
+		A7EB752527C2813E00874CAA /* Main-macOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */; };
+		A7EB752827C282CD00874CAA /* CoreDataHomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */; };
+		A7EB752E27C2867600874CAA /* ShoppingListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */; };
+		A7EB753227C296EF00874CAA /* NSManagedObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */; };
+		A7EB753527C2A0B300874CAA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753427C2A0B300874CAA /* CloudKit.framework */; };
+		A7EB753727C2A0EB00874CAA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */; };
+		A7EB753C27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +184,23 @@
 		A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-watchOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITests.swift; sourceTree = "<group>"; };
 		A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A72986C427C164460074CD74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A72986C727C164820074CD74 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		A72986C927C164BA0074CD74 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		A72986CC27C1662D0074CD74 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		A72986CF27C1674C0074CD74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A72986D127C167A00074CD74 /* Home+SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+SideBar.swift"; sourceTree = "<group>"; };
+		A72986D327C168D00074CD74 /* Home+AddListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+AddListModal.swift"; sourceTree = "<group>"; };
+		A72986D727C174640074CD74 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		A72986DC27C178650074CD74 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		A72986DE27C179990074CD74 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
+		A7EB752427C2813E00874CAA /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeRepository.swift; sourceTree = "<group>"; };
+		A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntity.swift; sourceTree = "<group>"; };
+		A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtensions.swift; sourceTree = "<group>"; };
+		A7EB753427C2A0B300874CAA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHomeModelChangesListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +208,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EB753527C2A0B300874CAA /* CloudKit.framework in Frameworks */,
+				A7EB753727C2A0EB00874CAA /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +279,7 @@
 				A729864527C161C30074CD74 /* macOS */,
 				A72986C127C1626D0074CD74 /* watchOS */,
 				A729861527C161B20074CD74 /* Products */,
+				A7EB753327C2A0B300874CAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,13 +303,15 @@
 		A729861627C161B20074CD74 /* NewShoppingList-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
-				A729861927C161B20074CD74 /* ContentView.swift */,
-				A729861B27C161B30074CD74 /* Assets.xcassets */,
-				A729862027C161B30074CD74 /* Persistence.swift */,
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
+				A729861927C161B20074CD74 /* ContentView.swift */,
+				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
+				A729862027C161B30074CD74 /* Persistence.swift */,
+				A729861B27C161B30074CD74 /* Assets.xcassets */,
+				A7EB752A27C2860F00874CAA /* Infrastructure */,
 				A729862227C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld */,
 				A729861D27C161B30074CD74 /* Preview Content */,
+				A72986C227C164320074CD74 /* Scenes */,
 			);
 			path = "NewShoppingList-macOS";
 			sourceTree = "<group>";
@@ -418,6 +457,92 @@
 				A72986AB27C1625D0074CD74 /* NewShoppingList-watchOSUITests */,
 			);
 			path = watchOS;
+			sourceTree = "<group>";
+		};
+		A72986C227C164320074CD74 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A72986C327C164360074CD74 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A72986C327C164360074CD74 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A72986C727C164820074CD74 /* HomeInteractor.swift */,
+				A72986CC27C1662D0074CD74 /* HomeModel.swift */,
+				A72986C927C164BA0074CD74 /* HomePresenter.swift */,
+				A72986C427C164460074CD74 /* HomeView.swift */,
+				A72986CF27C1674C0074CD74 /* HomeViewController.swift */,
+				A72986D927C1753E0074CD74 /* Models */,
+				A72986CE27C1673B0074CD74 /* ViewExtensions */,
+				A72986D627C174550074CD74 /* Workers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A72986CE27C1673B0074CD74 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				A72986D127C167A00074CD74 /* Home+SideBar.swift */,
+				A72986D327C168D00074CD74 /* Home+AddListModal.swift */,
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		A72986D627C174550074CD74 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				A72986D727C174640074CD74 /* HomeRepository.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		A72986D927C1753E0074CD74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A72986DE27C179990074CD74 /* Id.swift */,
+				A72986DC27C178650074CD74 /* ShoppingList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7EB752A27C2860F00874CAA /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752B27C2861700874CAA /* CoreData */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A7EB752B27C2861700874CAA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */,
+				A7EB753B27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift */,
+				A7EB753127C296EF00874CAA /* NSManagedObjectExtensions.swift */,
+				A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */,
+				A7EB753027C2867F00874CAA /* Model */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A7EB753027C2867F00874CAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7EB753327C2A0B300874CAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */,
+				A7EB753427C2A0B300874CAA /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -761,9 +886,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */,
+				A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */,
+				A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */,
+				A7EB752827C282CD00874CAA /* CoreDataHomeRepository.swift in Sources */,
+				A7EB752E27C2867600874CAA /* ShoppingListEntity.swift in Sources */,
+				A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */,
 				A729862127C161B30074CD74 /* Persistence.swift in Sources */,
 				A729861A27C161B20074CD74 /* ContentView.swift in Sources */,
 				A729862427C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld in Sources */,
+				A7EB753227C296EF00874CAA /* NSManagedObjectExtensions.swift in Sources */,
+				A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */,
+				A72986D827C174640074CD74 /* HomeRepository.swift in Sources */,
+				A7EB752527C2813E00874CAA /* Main-macOS.xcdatamodeld in Sources */,
+				A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */,
+				A7EB753C27C2B91D00874CAA /* RemoteHomeModelChangesListener.swift in Sources */,
+				A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */,
+				A72986C627C164750074CD74 /* HomeView.swift in Sources */,
+				A72986DF27C179990074CD74 /* Id.swift in Sources */,
 				A729861827C161B20074CD74 /* NewShoppingList_macOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -935,13 +1075,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS/NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-macOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/NewShoppingList-macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -962,6 +1102,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1017,13 +1158,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = "NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS/NewShoppingList-macOS/NewShoppingList_macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-macOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"macOS/NewShoppingList-macOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1038,6 +1179,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2493,6 +2635,16 @@
 			);
 			currentVersion = A729865827C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodel */;
 			path = NewShoppingList_iOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7EB752427C2813E00874CAA /* Main.xcdatamodel */,
+			);
+			currentVersion = A7EB752427C2813E00874CAA /* Main.xcdatamodel */;
+			path = "Main-macOS.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

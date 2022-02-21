@@ -1,10 +1,3 @@
-//
-//  NewShoppingList_macOSApp.swift
-//  NewShoppingList-macOS
-//
-//  Created by Adrian Świątek on 19/02/2022.
-//
-
 import SwiftUI
 
 @main
@@ -13,8 +6,27 @@ struct NewShoppingList_macOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            rootView()
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        .commands {
+            SidebarCommands()
+        }
+    }
+
+    private func rootView() -> some View {
+        let interactor = HomeInteractor(
+            repository: CoreDataHomeRepository(),
+            remoteChangesListener: RemoteHomeModelChangesListener()
+        )
+        let presenter = HomePresenter()
+        let controller = HomeView.Controller()
+
+        interactor.presenter = presenter
+        presenter.viewController = controller
+        controller.interactor = interactor
+
+        return HomeView(controller: controller)
     }
 }

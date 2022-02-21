@@ -48,6 +48,11 @@
 		A72986D827C174640074CD74 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D727C174640074CD74 /* HomeRepository.swift */; };
 		A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DC27C178650074CD74 /* ShoppingList.swift */; };
 		A72986DF27C179990074CD74 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DE27C179990074CD74 /* Id.swift */; };
+		A79E1BE227C43049005A5EA1 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE127C43049005A5EA1 /* ListsView.swift */; };
+		A79E1BE427C43055005A5EA1 /* ListsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE327C43055005A5EA1 /* ListsInteractor.swift */; };
+		A79E1BE627C4305C005A5EA1 /* ListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */; };
+		A79E1BE827C43066005A5EA1 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE727C43066005A5EA1 /* ListsViewController.swift */; };
+		A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BEC27C43084005A5EA1 /* ListsModel.swift */; };
 		A7EB752527C2813E00874CAA /* Main-macOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752327C2813E00874CAA /* Main-macOS.xcdatamodeld */; };
 		A7EB752827C282CD00874CAA /* CoreDataHomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */; };
 		A7EB752E27C2867600874CAA /* ShoppingListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */; };
@@ -194,6 +199,11 @@
 		A72986D727C174640074CD74 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		A72986DC27C178650074CD74 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		A72986DE27C179990074CD74 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
+		A79E1BE127C43049005A5EA1 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		A79E1BE327C43055005A5EA1 /* ListsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsInteractor.swift; sourceTree = "<group>"; };
+		A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPresenter.swift; sourceTree = "<group>"; };
+		A79E1BE727C43066005A5EA1 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		A79E1BEC27C43084005A5EA1 /* ListsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsModel.swift; sourceTree = "<group>"; };
 		A7EB752427C2813E00874CAA /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		A7EB752727C282CD00874CAA /* CoreDataHomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHomeRepository.swift; sourceTree = "<group>"; };
 		A7EB752C27C2867600874CAA /* ShoppingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntity.swift; sourceTree = "<group>"; };
@@ -354,12 +364,14 @@
 		A729864B27C1622A0074CD74 /* NewShoppingList-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */,
 				A729864E27C1622A0074CD74 /* ContentView.swift */,
-				A729865027C1622B0074CD74 /* Assets.xcassets */,
+				A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */,
 				A729865527C1622B0074CD74 /* Persistence.swift */,
+				A729865027C1622B0074CD74 /* Assets.xcassets */,
+				A79E1BDF27C42FE3005A5EA1 /* Infrastructure */,
 				A729865727C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld */,
 				A729865227C1622B0074CD74 /* Preview Content */,
+				A79E1BDE27C42FE0005A5EA1 /* Scenes */,
 			);
 			path = "NewShoppingList-iOS";
 			sourceTree = "<group>";
@@ -506,6 +518,57 @@
 				A72986DC27C178650074CD74 /* ShoppingList.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A79E1BDE27C42FE0005A5EA1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A79E1BE027C4301A005A5EA1 /* Lists */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A79E1BDF27C42FE3005A5EA1 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A79E1BE027C4301A005A5EA1 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				A79E1BE327C43055005A5EA1 /* ListsInteractor.swift */,
+				A79E1BEC27C43084005A5EA1 /* ListsModel.swift */,
+				A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */,
+				A79E1BE127C43049005A5EA1 /* ListsView.swift */,
+				A79E1BE727C43066005A5EA1 /* ListsViewController.swift */,
+				A79E1BE927C4306A005A5EA1 /* Models */,
+				A79E1BEA27C43071005A5EA1 /* ViewExtensions */,
+				A79E1BEB27C43076005A5EA1 /* Workers */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		A79E1BE927C4306A005A5EA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A79E1BEA27C43071005A5EA1 /* ViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		A79E1BEB27C43076005A5EA1 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		A7EB752A27C2860F00874CAA /* Infrastructure */ = {
@@ -929,10 +992,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79E1BE427C43055005A5EA1 /* ListsInteractor.swift in Sources */,
 				A729865927C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld in Sources */,
+				A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */,
+				A79E1BE827C43066005A5EA1 /* ListsViewController.swift in Sources */,
+				A79E1BE227C43049005A5EA1 /* ListsView.swift in Sources */,
 				A729865627C1622B0074CD74 /* Persistence.swift in Sources */,
 				A729864F27C1622A0074CD74 /* ContentView.swift in Sources */,
 				A729864D27C1622A0074CD74 /* NewShoppingList_iOSApp.swift in Sources */,
+				A79E1BE627C4305C005A5EA1 /* ListsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1514,7 +1582,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/NewShoppingList-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1598,7 +1666,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/NewShoppingList-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
@@ -1957,7 +2025,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2041,7 +2109,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"watchOS/NewShoppingList-watchOS WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
@@ -2121,6 +2189,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2200,6 +2269,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Q924VJ4PLT;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

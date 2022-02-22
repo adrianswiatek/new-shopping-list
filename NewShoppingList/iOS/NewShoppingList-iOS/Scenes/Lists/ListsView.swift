@@ -4,13 +4,14 @@ struct ListsView: View {
     @ObservedObject
     private var controller: Controller
 
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    init(controller: Controller) {
+        self.controller = controller
     }
-}
 
-struct ListsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListsView()
+    var body: some View {
+        List(controller.lists) { list in
+            Text(list.name)
+        }
+        .onAppear(perform: controller.fetch)
     }
 }

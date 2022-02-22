@@ -1,15 +1,13 @@
 import CoreData
 import CloudKit
 
-final class CoreDataHomeRepository: NSObject, HomeRepository {
-    private var lists: [ShoppingList] = []
-
+final class CoreDataMainRepository: NSObject, MainRepository {
     private let container: NSPersistentCloudKitContainer
     private let context: NSManagedObjectContext
     private let controller: NSFetchedResultsController<ShoppingListEntity>
 
     override init() {
-        container = NSPersistentCloudKitContainer(name: "Main-macOS")
+        container = NSPersistentCloudKitContainer(name: "Main")
         container.loadPersistentStores { _, error in
             if let error = error {
                 let errorMessage = error.localizedDescription
@@ -19,11 +17,8 @@ final class CoreDataHomeRepository: NSObject, HomeRepository {
         container.viewContext.automaticallyMergesChangesFromParent = true
         context = container.viewContext
 
-        let fetchRequest = ShoppingListEntity.fetchRequest()
-        fetchRequest.sortDescriptors = [.init(key: "name", ascending: true)]
-
         controller = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
+            fetchRequest: ShoppingListEntity.fetchAllRequest(),
             managedObjectContext: context,
             sectionNameKeyPath: nil,
             cacheName: nil
@@ -42,6 +37,20 @@ final class CoreDataHomeRepository: NSObject, HomeRepository {
             .map { $0.toShoppingList() }
 
         return entities ?? []
+    }
+
+    func list(withId listId: Id<ShoppingList>) -> ShoppingList? {
+        let request: NSFetchRequest<ShoppingListEntity> = ShoppingListEntity.fetchRequest()
+        request.predicate = .init(format: "id == %@", listId.toUuid() as CVarArg)
+
+        let entities = try? context.fetch(request)
+        let lists = entities?.map { $0.toShoppingList() }
+
+        guard lists?.count == 1 else {
+            return nil
+        }
+
+        return lists?.first
     }
 
     func addList(withName listName: String) {
@@ -71,7 +80,7 @@ final class CoreDataHomeRepository: NSObject, HomeRepository {
     }
 }
 
-extension CoreDataHomeRepository: NSFetchedResultsControllerDelegate {
+extension CoreDataMainRepository: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(
         _ controller: NSFetchedResultsController<NSFetchRequestResult>
     ) {
@@ -79,7 +88,7 @@ extension CoreDataHomeRepository: NSFetchedResultsControllerDelegate {
             return
         }
 
-        let notificationName = Notification.Name(rawValue: "HomeModelChangedFromRemote")
+        let notificationName = Notification.Name(rawValue: "ModelChangedFromRemote")
         NotificationCenter.default.post(name: notificationName, object: nil)
     }
 }

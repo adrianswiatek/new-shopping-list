@@ -1,17 +1,17 @@
 import Foundation
 
-protocol RemoteHomeModelChangesListenerDelegate: AnyObject {
-    func shoppingListsDidChangeFromRemote(_ listener: RemoteHomeModelChangesListener)
+protocol RemoteModelChangesListenerDelegate: AnyObject {
+    func shoppingListsDidChangeFromRemote(_ listener: RemoteModelChangesListener)
 }
 
-final class RemoteHomeModelChangesListener {
-    weak var delegate: RemoteHomeModelChangesListenerDelegate?
+final class RemoteModelChangesListener {
+    weak var delegate: RemoteModelChangesListenerDelegate?
 
     init() {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(didChangeNotification),
-            name: .init(rawValue: "HomeModelChangedFromRemote"),
+            name: .init(rawValue: "ModelChangedFromRemote"),
             object: nil
         )
     }

@@ -17,7 +17,7 @@ struct NewShoppingList_macOSApp: App {
 
     private func rootView() -> some View {
         let interactor = HomeInteractor(
-            repository: CoreDataHomeRepository(),
+            repository: CoreDataMainRepository(),
             remoteChangesListener: RemoteHomeModelChangesListener()
         )
         let presenter = HomePresenter()

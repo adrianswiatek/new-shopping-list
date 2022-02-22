@@ -1,10 +1,10 @@
-protocol PresentationLogic {
+protocol HomePresentationLogic {
     func addList(response: Home.AddList.Resposne)
     func deleteList(response: Home.DeleteList.Response)
     func fetchLists(response: Home.FetchLists.Response)
 }
 
-final class HomePresenter: PresentationLogic {
+final class HomePresenter: HomePresentationLogic {
     weak var viewController: HomeDisplayLogic?
 
     func addList(response: Home.AddList.Resposne) {

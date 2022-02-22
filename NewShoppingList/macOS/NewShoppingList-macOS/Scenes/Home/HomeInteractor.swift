@@ -7,13 +7,13 @@ protocol HomeBusinessLogic {
 }
 
 final class HomeInteractor: HomeBusinessLogic {
-    var presenter: PresentationLogic?
+    var presenter: HomePresentationLogic?
 
-    private let repository: HomeRepository
+    private let repository: MainRepository
     private let remoteChangesListener: RemoteHomeModelChangesListener
 
     init(
-        repository: HomeRepository,
+        repository: MainRepository,
         remoteChangesListener: RemoteHomeModelChangesListener
     ) {
         self.repository = repository

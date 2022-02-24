@@ -71,6 +71,12 @@
 		A7EB753527C2A0B300874CAA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753427C2A0B300874CAA /* CloudKit.framework */; };
 		A7EB753727C2A0EB00874CAA /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */; };
 		A7EB753C27C2B91D00874CAA /* RemoteModelChangesListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB753B27C2B91D00874CAA /* RemoteModelChangesListener.swift */; };
+		E89AD81E27CADC9C00821775 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81D27CADC9C00821775 /* AddListView.swift */; };
+		E89AD82027CADE3500821775 /* AddListIinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81F27CADE3500821775 /* AddListIinteractor.swift */; };
+		E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82127CADE3B00821775 /* AddListPresenter.swift */; };
+		E89AD82427CADE4400821775 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82327CADE4400821775 /* AddListViewController.swift */; };
+		E89AD82627CADE7C00821775 /* AddListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82527CADE7C00821775 /* AddListModel.swift */; };
+		E89AD82827CAEC4200821775 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82727CAEC4200821775 /* Configurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +232,12 @@
 		A7EB753427C2A0B300874CAA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A7EB753627C2A0EB00874CAA /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A7EB753B27C2B91D00874CAA /* RemoteModelChangesListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModelChangesListener.swift; sourceTree = "<group>"; };
+		E89AD81D27CADC9C00821775 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		E89AD81F27CADE3500821775 /* AddListIinteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListIinteractor.swift; sourceTree = "<group>"; };
+		E89AD82127CADE3B00821775 /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
+		E89AD82327CADE4400821775 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
+		E89AD82527CADE7C00821775 /* AddListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListModel.swift; sourceTree = "<group>"; };
+		E89AD82727CAEC4200821775 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +440,7 @@
 		A729864B27C1622A0074CD74 /* NewShoppingList-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E89AD82727CAEC4200821775 /* Configurator.swift */,
 				A729864E27C1622A0074CD74 /* ContentView.swift */,
 				A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */,
 				A729865527C1622B0074CD74 /* Persistence.swift */,
@@ -584,6 +597,7 @@
 		A79E1BDE27C42FE0005A5EA1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E89AD81C27CADC8B00821775 /* AddItem */,
 				A79E1BE027C4301A005A5EA1 /* Lists */,
 			);
 			path = Scenes;
@@ -598,7 +612,6 @@
 				A79E1BE127C43049005A5EA1 /* ListsView.swift */,
 				A79E1BE727C43066005A5EA1 /* ListsViewController.swift */,
 				A79E1BE927C4306A005A5EA1 /* Models */,
-				A79E1BEA27C43071005A5EA1 /* ViewExtensions */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -611,13 +624,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A79E1BEA27C43071005A5EA1 /* ViewExtensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewExtensions;
-			sourceTree = "<group>";
-		};
 		A7EB753327C2A0B300874CAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +632,18 @@
 				A7EB753427C2A0B300874CAA /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89AD81C27CADC8B00821775 /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				E89AD81F27CADE3500821775 /* AddListIinteractor.swift */,
+				E89AD82527CADE7C00821775 /* AddListModel.swift */,
+				E89AD82127CADE3B00821775 /* AddListPresenter.swift */,
+				E89AD81D27CADC9C00821775 /* AddListView.swift */,
+				E89AD82327CADE4400821775 /* AddListViewController.swift */,
+			);
+			path = AddItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1013,9 +1031,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A701EAD427C5857E00705208 /* MainRepository.swift in Sources */,
+				E89AD81E27CADC9C00821775 /* AddListView.swift in Sources */,
 				A79E1BE427C43055005A5EA1 /* ListsInteractor.swift in Sources */,
 				A701EABF27C575B400705208 /* ShoppingList.swift in Sources */,
+				E89AD82027CADE3500821775 /* AddListIinteractor.swift in Sources */,
+				E89AD82827CAEC4200821775 /* Configurator.swift in Sources */,
 				A729865927C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld in Sources */,
+				E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */,
 				A701EACA27C57F6C00705208 /* ShoppingListEntity.swift in Sources */,
 				A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */,
 				A79E1BE827C43066005A5EA1 /* ListsViewController.swift in Sources */,
@@ -1024,10 +1046,12 @@
 				A701EAC627C57F1300705208 /* NSManagedObjectExtensions.swift in Sources */,
 				A729864F27C1622A0074CD74 /* ContentView.swift in Sources */,
 				A701EAD227C584F600705208 /* CoreDataMainRepository.swift in Sources */,
+				E89AD82427CADE4400821775 /* AddListViewController.swift in Sources */,
 				A729864D27C1622A0074CD74 /* NewShoppingList_iOSApp.swift in Sources */,
 				A79E1BE627C4305C005A5EA1 /* ListsPresenter.swift in Sources */,
 				A701EAD527C5858500705208 /* RemoteModelChangesListener.swift in Sources */,
 				A701EABC27C5757400705208 /* Id.swift in Sources */,
+				E89AD82627CADE7C00821775 /* AddListModel.swift in Sources */,
 				A701EAD727C5859000705208 /* Main.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

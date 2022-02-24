@@ -1,4 +1,5 @@
 protocol ListsBusinessLogic {
+    func delete(request: Lists.Delete.Request)
     func fetch(request: Lists.Fetch.Request)
 }
 
@@ -15,6 +16,13 @@ final class ListsInteractor: ListsBusinessLogic {
         self.repository = repository
         self.remoteChangesListener = remoteChangesListener
         self.remoteChangesListener.delegate = self
+    }
+
+    func delete(request: Lists.Delete.Request) {
+        repository.deleteList(withId: request.listId)
+
+        let response = Lists.Delete.Response()
+        presenter?.delete(response: response)
     }
 
     func fetch(request: Lists.Fetch.Request) {

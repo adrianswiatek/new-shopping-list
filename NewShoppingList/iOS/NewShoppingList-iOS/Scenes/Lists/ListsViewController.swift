@@ -1,6 +1,8 @@
 import Combine
+import Foundation
 
 protocol ListsDisplayLogic: AnyObject {
+    func delete(viewModel: Lists.Delete.ViewModel)
     func fetch(viewModel: Lists.Fetch.ViewModel)
 }
 
@@ -13,6 +15,19 @@ extension ListsView {
 
         init() {
             self.lists = []
+        }
+
+        func delete(_ indexSet: IndexSet) {
+            guard let index = indexSet.first else {
+                return
+            }
+
+            let request = Lists.Delete.Request(listId: lists[index].id)
+            interactor?.delete(request: request)
+        }
+
+        func delete(viewModel: Lists.Delete.ViewModel) {
+
         }
 
         func fetch() {

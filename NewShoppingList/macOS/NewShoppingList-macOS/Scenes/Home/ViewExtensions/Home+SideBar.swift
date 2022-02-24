@@ -6,17 +6,13 @@ extension HomeView {
         private var controller: Controller
 
         @State
-        private var selectedList: ShoppingList? {
-            didSet {
-                print(selectedList ?? "nil")
-            }
-        }
+        private var selectedList: ShoppingList?
 
         @State
         private var isAddListModalVisible: Bool = false
 
         init(_ controller: Controller) {
-            self._controller = ObservedObject(wrappedValue: controller)
+            self.controller = controller
         }
 
         var body: some View {
@@ -61,7 +57,7 @@ extension HomeView {
                     }
                 }
             }
-            .frame(minWidth: 270)
+            .frame(minWidth: 275)
             .sheet(isPresented: $isAddListModalVisible) {
                 AddListModal(controller)
             }

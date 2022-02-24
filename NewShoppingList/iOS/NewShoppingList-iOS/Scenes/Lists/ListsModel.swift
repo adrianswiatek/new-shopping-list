@@ -1,4 +1,18 @@
 enum Lists {
+    enum Delete {
+        struct Request {
+            let listId: Id<ShoppingList>
+        }
+
+        struct Response {
+
+        }
+
+        struct ViewModel {
+
+        }
+    }
+
     enum Fetch {
         struct Request {
             enum Variant {

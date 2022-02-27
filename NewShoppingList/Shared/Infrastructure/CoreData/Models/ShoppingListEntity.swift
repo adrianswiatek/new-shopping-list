@@ -10,6 +10,12 @@ class ShoppingListEntity: NSManagedObject, Identifiable {
     static func fetchRequest() -> NSFetchRequest<ShoppingListEntity> {
         NSFetchRequest<ShoppingListEntity>(entityName: "ShoppingListEntity")
     }
+
+    static func fetchAllRequest() -> NSFetchRequest<ShoppingListEntity> {
+        let fetchRequest = ShoppingListEntity.fetchRequest()
+        fetchRequest.sortDescriptors = []
+        return fetchRequest
+    }
 }
 
 extension ShoppingListEntity {

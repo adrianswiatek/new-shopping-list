@@ -7,14 +7,14 @@ protocol HomeBusinessLogic {
 }
 
 final class HomeInteractor: HomeBusinessLogic {
-    var presenter: PresentationLogic?
+    var presenter: HomePresentationLogic?
 
-    private let repository: HomeRepository
-    private let remoteChangesListener: RemoteHomeModelChangesListener
+    private let repository: MainRepository
+    private let remoteChangesListener: RemoteModelChangesListener
 
     init(
-        repository: HomeRepository,
-        remoteChangesListener: RemoteHomeModelChangesListener
+        repository: MainRepository,
+        remoteChangesListener: RemoteModelChangesListener
     ) {
         self.repository = repository
         self.remoteChangesListener = remoteChangesListener
@@ -42,8 +42,8 @@ final class HomeInteractor: HomeBusinessLogic {
     }
 }
 
-extension HomeInteractor: RemoteHomeModelChangesListenerDelegate {
-    func shoppingListsDidChangeFromRemote(_ listener: RemoteHomeModelChangesListener) {
+extension HomeInteractor: RemoteModelChangesListenerDelegate {
+    func shoppingListsDidChangeFromRemote(_ listener: RemoteModelChangesListener) {
         let request = Home.FetchLists.Request()
         fetchLists(request: request)
     }

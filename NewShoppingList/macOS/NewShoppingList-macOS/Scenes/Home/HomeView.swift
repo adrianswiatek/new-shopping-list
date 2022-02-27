@@ -13,6 +13,6 @@ struct HomeView: View {
             SideBar(controller)
             Text("Main view")
         }
-        .navigationTitle("Shopping List")
+        .navigationTitle("Shopping Lists")
     }
 }

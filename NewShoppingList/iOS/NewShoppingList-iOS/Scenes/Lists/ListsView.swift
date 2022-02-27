@@ -15,12 +15,13 @@ struct ListsView: View {
         NavigationView {
             List {
                 ForEach(controller.lists) { list in
-                    Text(list.name)
+                    Label(list.name, systemImage: "chevron.right")
                 }
                 .onDelete {
                     controller.delete($0)
-                }
+                }gi
             }
+            .listStyle(.plain)
             .refreshable {
                 controller.fetch()
             }

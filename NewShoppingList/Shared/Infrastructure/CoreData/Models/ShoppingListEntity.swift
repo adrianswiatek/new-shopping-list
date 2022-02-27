@@ -13,7 +13,9 @@ class ShoppingListEntity: NSManagedObject, Identifiable {
 
     static func fetchAllRequest() -> NSFetchRequest<ShoppingListEntity> {
         let fetchRequest = ShoppingListEntity.fetchRequest()
-        fetchRequest.sortDescriptors = []
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \ShoppingListEntity.name, ascending: true)
+        ]
         return fetchRequest
     }
 }

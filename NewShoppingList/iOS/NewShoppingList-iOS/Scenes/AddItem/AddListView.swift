@@ -1,14 +1,20 @@
 import SwiftUI
 
 struct AddListView: View {
-    @Environment(\.dismiss) var dismissAction: DismissAction
+    @Environment(\.dismiss)
+    private var dismissAction: DismissAction
+
+    @Environment(\.colorScheme)
+    private var colorScheme: ColorScheme
+
+    @FocusState
+    private var isFocusedOnListName: Bool
 
     @ObservedObject
     private var controller: Controller
 
     init(controller: Controller) {
         self.controller = controller
-        self.controller.onListSaved = dismiss
     }
 
     var body: some View {
@@ -23,15 +29,19 @@ struct AddListView: View {
                 .padding(.vertical, 8)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(.sRGB, white: 0, opacity: 0.25), lineWidth: 1)
+                        .opacity(colorScheme == .dark ? 0.2 : 0.1)
                 )
+                .focused($isFocusedOnListName)
 
             HStack {
                 Spacer()
                 Button {
-                    controller.save()
+                    withAnimation {
+                        controller.save()
+                    }
+                    dismissAction()
                 } label: {
-                    Label("OK", systemImage: "checkmark")
+                    Label("Save", systemImage: "checkmark")
                         .font(.title3)
                 }
                 .buttonStyle(.borderedProminent)
@@ -43,10 +53,14 @@ struct AddListView: View {
         }
         .padding(.top, -32)
         .padding(.horizontal)
-        .onAppear(perform: controller.reset)
+        .task {
+            controller.reset()
+            await focusOnListName()
+        }
     }
 
-    private func dismiss() {
-        dismissAction()
+    private func focusOnListName() async {
+        try? await Task.sleep(nanoseconds: 500_000_000)
+        isFocusedOnListName = true
     }
 }

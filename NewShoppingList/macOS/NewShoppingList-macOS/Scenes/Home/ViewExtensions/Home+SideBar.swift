@@ -17,9 +17,14 @@ extension HomeView {
 
         var body: some View {
             VStack {
-                List(controller.lists) { list in
-                    NavigationLink(list.name, tag: list, selection: $selectedList) {
-                        Text(list.name)
+                List {
+                    ForEach(controller.lists) { list in
+                        NavigationLink(tag: list, selection: $selectedList) {
+                            Text(list.name)
+                        } label: {
+                            Label(list.name, systemImage: "chevron.right")
+                                .badge(3)
+                        }
                     }
                 }
                 .listStyle(.inset)

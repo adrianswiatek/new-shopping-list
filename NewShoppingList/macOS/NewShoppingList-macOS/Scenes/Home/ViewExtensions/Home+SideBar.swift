@@ -23,7 +23,7 @@ extension HomeView {
                             Text(list.name)
                         } label: {
                             Label(list.name, systemImage: "chevron.right")
-                                .badge(3)
+                                .badge(list.numberOfItems)
                         }
                     }
                 }

@@ -10,11 +10,11 @@ struct AddListView: View {
     @FocusState
     private var isFocusedOnListName: Bool
 
-    @ObservedObject
+    @StateObject
     private var controller: Controller
 
     init(controller: Controller) {
-        self.controller = controller
+        self._controller = StateObject(wrappedValue: controller)
     }
 
     var body: some View {
@@ -39,7 +39,6 @@ struct AddListView: View {
                     withAnimation {
                         controller.save()
                     }
-                    dismissAction()
                 } label: {
                     Label("Save", systemImage: "checkmark")
                         .font(.title3)
@@ -55,6 +54,7 @@ struct AddListView: View {
         .padding(.horizontal)
         .task {
             controller.reset()
+            controller.dismissAction = dismissAction
             await focusOnListName()
         }
     }

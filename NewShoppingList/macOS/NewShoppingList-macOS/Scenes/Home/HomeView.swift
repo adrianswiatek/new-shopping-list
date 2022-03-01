@@ -14,5 +14,6 @@ struct HomeView: View {
             Text("Main view")
         }
         .navigationTitle("Shopping Lists")
+        .frame(minWidth: 750, minHeight: 250)
     }
 }

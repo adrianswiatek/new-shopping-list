@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ListsView: View {
-    @ObservedObject
+    @StateObject
     private var controller: Controller
 
     private let configurator: Configurator
 
     init(controller: Controller, configurator: Configurator) {
-        self.controller = controller
+        self._controller = StateObject(wrappedValue: controller)
         self.configurator = configurator
     }
 
@@ -19,7 +19,7 @@ struct ListsView: View {
                 }
                 .onDelete {
                     controller.delete($0)
-                }gi
+                }
             }
             .listStyle(.plain)
             .refreshable {

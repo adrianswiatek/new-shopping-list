@@ -5,12 +5,14 @@ import CoreData
 class ShoppingListEntity: NSManagedObject, Identifiable {
     @NSManaged var id: UUID
     @NSManaged var name: String
+    @NSManaged var items: NSSet?
 
     @nonobjc
     static func fetchRequest() -> NSFetchRequest<ShoppingListEntity> {
         NSFetchRequest<ShoppingListEntity>(entityName: "ShoppingListEntity")
     }
 
+    @nonobjc
     static func fetchAllRequest() -> NSFetchRequest<ShoppingListEntity> {
         let fetchRequest = ShoppingListEntity.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -22,7 +24,11 @@ class ShoppingListEntity: NSManagedObject, Identifiable {
 
 extension ShoppingListEntity {
     func toShoppingList() -> ShoppingList {
-        ShoppingList.Factory.fromRaw(id: id, name: name)
+        ShoppingList.Factory.fromRaw(
+            id: id,
+            name: name,
+            numberOfItems: items?.count ?? 0
+        )
     }
 
     static func fromShoppingList(
@@ -34,4 +40,18 @@ extension ShoppingListEntity {
         entity.name = shoppingList.name
         return entity
     }
+}
+
+extension ShoppingListEntity {
+    @objc(addItemsObject:)
+    @NSManaged func addToItems(_ value: ItemEntity)
+
+    @objc(removeItemsObject:)
+    @NSManaged func removeFromItems(_ value: ItemEntity)
+
+    @objc(addItems:)
+    @NSManaged func addToItems(_ values: NSSet)
+
+    @objc(removeItems:)
+    @NSManaged func removeFromItems(_ values: NSSet)
 }

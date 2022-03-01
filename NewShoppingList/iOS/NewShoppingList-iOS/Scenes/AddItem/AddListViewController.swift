@@ -16,6 +16,8 @@ extension AddListView {
             listName.isEmpty
         }
 
+        var dismissAction: DismissAction?
+
         func reset() {
             listName = ""
         }
@@ -26,6 +28,7 @@ extension AddListView {
         }
 
         func save(viewModel: AddList.Save.ViewModel) {
+            dismissAction?()
             reset()
         }
     }

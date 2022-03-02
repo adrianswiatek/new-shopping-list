@@ -47,13 +47,12 @@
 		A72986AD27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */; };
 		A72986AF27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */; };
 		A72986B227C1625D0074CD74 /* NewShoppingList-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A729867C27C1625B0074CD74 /* NewShoppingList-watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A72986C627C164750074CD74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C427C164460074CD74 /* HomeView.swift */; };
-		A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C727C164820074CD74 /* HomeInteractor.swift */; };
-		A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C927C164BA0074CD74 /* HomePresenter.swift */; };
-		A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CC27C1662D0074CD74 /* HomeModel.swift */; };
-		A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* HomeViewController.swift */; };
-		A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D127C167A00074CD74 /* Home+SideBar.swift */; };
-		A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D327C168D00074CD74 /* Home+AddListModal.swift */; };
+		A72986C827C164820074CD74 /* ListsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C727C164820074CD74 /* ListsInteractor.swift */; };
+		A72986CA27C164BA0074CD74 /* ListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986C927C164BA0074CD74 /* ListsPresenter.swift */; };
+		A72986CD27C1662D0074CD74 /* ListsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CC27C1662D0074CD74 /* ListsModel.swift */; };
+		A72986D027C1674C0074CD74 /* ListsView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986CF27C1674C0074CD74 /* ListsView+Controller.swift */; };
+		A72986D227C167A00074CD74 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D127C167A00074CD74 /* ListsView.swift */; };
+		A72986D427C168D00074CD74 /* ListsView+AddListModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D327C168D00074CD74 /* ListsView+AddListModal.swift */; };
 		A72986D827C174640074CD74 /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986D727C174640074CD74 /* MainRepository.swift */; };
 		A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DC27C178650074CD74 /* ShoppingList.swift */; };
 		A72986DF27C179990074CD74 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72986DE27C179990074CD74 /* Id.swift */; };
@@ -93,6 +92,13 @@
 		E89FEEF127CED7C300D4C20F /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEEE927CED7C300D4C20F /* ItemEntity.swift */; };
 		E89FEEF227CED7C300D4C20F /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEEE927CED7C300D4C20F /* ItemEntity.swift */; };
 		E89FEEF327CED7C300D4C20F /* ItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FEEE927CED7C300D4C20F /* ItemEntity.swift */; };
+		E8DD2C2E27CFDBF100B78AD2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C2D27CFDBF100B78AD2 /* RootView.swift */; };
+		E8DD2C3227CFDC3600B78AD2 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3127CFDC3600B78AD2 /* Configurator.swift */; };
+		E8DD2C3427CFDC6500B78AD2 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3327CFDC6500B78AD2 /* ItemsView.swift */; };
+		E8DD2C3627CFDC9000B78AD2 /* ItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3527CFDC9000B78AD2 /* ItemsModel.swift */; };
+		E8DD2C3827CFDCB000B78AD2 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3727CFDCB000B78AD2 /* ItemsInteractor.swift */; };
+		E8DD2C3A27CFDCD900B78AD2 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3927CFDCD900B78AD2 /* ItemsPresenter.swift */; };
+		E8DD2C3C27CFDCFD00B78AD2 /* ItemsView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD2C3B27CFDCFD00B78AD2 /* ItemsView+Controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,13 +231,12 @@
 		A72986A827C1625D0074CD74 /* NewShoppingList-watchOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-watchOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A72986AC27C1625D0074CD74 /* NewShoppingList_watchOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITests.swift; sourceTree = "<group>"; };
 		A72986AE27C1625D0074CD74 /* NewShoppingList_watchOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_watchOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A72986C427C164460074CD74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		A72986C727C164820074CD74 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		A72986C927C164BA0074CD74 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		A72986CC27C1662D0074CD74 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		A72986CF27C1674C0074CD74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A72986D127C167A00074CD74 /* Home+SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+SideBar.swift"; sourceTree = "<group>"; };
-		A72986D327C168D00074CD74 /* Home+AddListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+AddListModal.swift"; sourceTree = "<group>"; };
+		A72986C727C164820074CD74 /* ListsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsInteractor.swift; sourceTree = "<group>"; };
+		A72986C927C164BA0074CD74 /* ListsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPresenter.swift; sourceTree = "<group>"; };
+		A72986CC27C1662D0074CD74 /* ListsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsModel.swift; sourceTree = "<group>"; };
+		A72986CF27C1674C0074CD74 /* ListsView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListsView+Controller.swift"; sourceTree = "<group>"; };
+		A72986D127C167A00074CD74 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		A72986D327C168D00074CD74 /* ListsView+AddListModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListsView+AddListModal.swift"; sourceTree = "<group>"; };
 		A72986D727C174640074CD74 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
 		A72986DC27C178650074CD74 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		A72986DE27C179990074CD74 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
@@ -262,6 +267,13 @@
 		E89F40EF27CBEFF7006F76E4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E89FEEE727CED7C300D4C20F /* ShoppingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntity.swift; sourceTree = "<group>"; };
 		E89FEEE927CED7C300D4C20F /* ItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEntity.swift; sourceTree = "<group>"; };
+		E8DD2C2D27CFDBF100B78AD2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E8DD2C3127CFDC3600B78AD2 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		E8DD2C3327CFDC6500B78AD2 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		E8DD2C3527CFDC9000B78AD2 /* ItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModel.swift; sourceTree = "<group>"; };
+		E8DD2C3727CFDCB000B78AD2 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
+		E8DD2C3927CFDCD900B78AD2 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
+		E8DD2C3B27CFDCFD00B78AD2 /* ItemsView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+Controller.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
+				E8DD2C3127CFDC3600B78AD2 /* Configurator.swift */,
 				A729861927C161B20074CD74 /* ContentView.swift */,
 				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
 				A729862027C161B30074CD74 /* Persistence.swift */,
@@ -580,31 +593,11 @@
 		A72986C227C164320074CD74 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A72986C327C164360074CD74 /* Home */,
+				E8DD2C2D27CFDBF100B78AD2 /* RootView.swift */,
+				E8DD2C3027CFDC2300B78AD2 /* Items */,
+				E8DD2C2F27CFDC1F00B78AD2 /* Lists */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		A72986C327C164360074CD74 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				A72986C727C164820074CD74 /* HomeInteractor.swift */,
-				A72986CC27C1662D0074CD74 /* HomeModel.swift */,
-				A72986C927C164BA0074CD74 /* HomePresenter.swift */,
-				A72986C427C164460074CD74 /* HomeView.swift */,
-				A72986CF27C1674C0074CD74 /* HomeViewController.swift */,
-				A72986CE27C1673B0074CD74 /* ViewExtensions */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		A72986CE27C1673B0074CD74 /* ViewExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				A72986D127C167A00074CD74 /* Home+SideBar.swift */,
-				A72986D327C168D00074CD74 /* Home+AddListModal.swift */,
-			);
-			path = ViewExtensions;
 			sourceTree = "<group>";
 		};
 		A79E1BDE27C42FE0005A5EA1 /* Scenes */ = {
@@ -677,6 +670,31 @@
 				A72986DC27C178650074CD74 /* ShoppingList.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		E8DD2C2F27CFDC1F00B78AD2 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				A72986C727C164820074CD74 /* ListsInteractor.swift */,
+				A72986CC27C1662D0074CD74 /* ListsModel.swift */,
+				A72986C927C164BA0074CD74 /* ListsPresenter.swift */,
+				A72986D127C167A00074CD74 /* ListsView.swift */,
+				A72986D327C168D00074CD74 /* ListsView+AddListModal.swift */,
+				A72986CF27C1674C0074CD74 /* ListsView+Controller.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		E8DD2C3027CFDC2300B78AD2 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E8DD2C3727CFDCB000B78AD2 /* ItemsInteractor.swift */,
+				E8DD2C3527CFDC9000B78AD2 /* ItemsModel.swift */,
+				E8DD2C3927CFDCD900B78AD2 /* ItemsPresenter.swift */,
+				E8DD2C3327CFDC6500B78AD2 /* ItemsView.swift */,
+				E8DD2C3B27CFDCFD00B78AD2 /* ItemsView+Controller.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1020,25 +1038,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72986CA27C164BA0074CD74 /* HomePresenter.swift in Sources */,
+				A72986CA27C164BA0074CD74 /* ListsPresenter.swift in Sources */,
 				E89FEEF227CED7C300D4C20F /* ItemEntity.swift in Sources */,
-				A72986D427C168D00074CD74 /* Home+AddListModal.swift in Sources */,
+				A72986D427C168D00074CD74 /* ListsView+AddListModal.swift in Sources */,
 				E89FEEEC27CED7C300D4C20F /* ShoppingListEntity.swift in Sources */,
-				A72986D027C1674C0074CD74 /* HomeViewController.swift in Sources */,
+				A72986D027C1674C0074CD74 /* ListsView+Controller.swift in Sources */,
 				A7EB752827C282CD00874CAA /* CoreDataMainRepository.swift in Sources */,
 				A72986DD27C178650074CD74 /* ShoppingList.swift in Sources */,
 				A729862127C161B30074CD74 /* Persistence.swift in Sources */,
 				A729861A27C161B20074CD74 /* ContentView.swift in Sources */,
+				E8DD2C3827CFDCB000B78AD2 /* ItemsInteractor.swift in Sources */,
 				A729862427C161B30074CD74 /* NewShoppingList_macOS.xcdatamodeld in Sources */,
 				A7EB753227C296EF00874CAA /* NSManagedObjectExtensions.swift in Sources */,
-				A72986CD27C1662D0074CD74 /* HomeModel.swift in Sources */,
+				E8DD2C2E27CFDBF100B78AD2 /* RootView.swift in Sources */,
+				E8DD2C3227CFDC3600B78AD2 /* Configurator.swift in Sources */,
+				A72986CD27C1662D0074CD74 /* ListsModel.swift in Sources */,
 				A72986D827C174640074CD74 /* MainRepository.swift in Sources */,
 				A7EB752527C2813E00874CAA /* Main.xcdatamodeld in Sources */,
-				A72986C827C164820074CD74 /* HomeInteractor.swift in Sources */,
+				E8DD2C3A27CFDCD900B78AD2 /* ItemsPresenter.swift in Sources */,
+				A72986C827C164820074CD74 /* ListsInteractor.swift in Sources */,
 				A7EB753C27C2B91D00874CAA /* RemoteModelChangesListener.swift in Sources */,
-				A72986D227C167A00074CD74 /* Home+SideBar.swift in Sources */,
-				A72986C627C164750074CD74 /* HomeView.swift in Sources */,
+				A72986D227C167A00074CD74 /* ListsView.swift in Sources */,
+				E8DD2C3C27CFDCFD00B78AD2 /* ItemsView+Controller.swift in Sources */,
 				A72986DF27C179990074CD74 /* Id.swift in Sources */,
+				E8DD2C3427CFDC6500B78AD2 /* ItemsView.swift in Sources */,
+				E8DD2C3627CFDC9000B78AD2 /* ItemsModel.swift in Sources */,
 				A729861827C161B20074CD74 /* NewShoppingList_macOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

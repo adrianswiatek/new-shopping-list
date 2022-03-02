@@ -1,4 +1,4 @@
-enum Home {
+enum Lists {
     enum AddList {
         struct Request {
             let listName: String

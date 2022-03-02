@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension HomeView {
+extension ListsView {
     struct AddListModal: View {
         @Environment(\.dismiss)
         private var dismiss: DismissAction

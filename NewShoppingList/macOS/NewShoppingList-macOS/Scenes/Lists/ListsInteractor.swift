@@ -1,13 +1,13 @@
 import Combine
 
-protocol HomeBusinessLogic {
-    func addList(request: Home.AddList.Request)
-    func deleteList(request: Home.DeleteList.Request)
-    func fetchLists(request: Home.FetchLists.Request)
+protocol ListsBusinessLogic {
+    func addList(request: Lists.AddList.Request)
+    func deleteList(request: Lists.DeleteList.Request)
+    func fetchLists(request: Lists.FetchLists.Request)
 }
 
-final class HomeInteractor: HomeBusinessLogic {
-    var presenter: HomePresentationLogic?
+final class ListsInteractor: ListsBusinessLogic {
+    var presenter: ListsPresentationLogic?
 
     private let repository: MainRepository
     private let remoteChangesListener: RemoteModelChangesListener
@@ -21,30 +21,30 @@ final class HomeInteractor: HomeBusinessLogic {
         self.remoteChangesListener.delegate = self
     }
 
-    func addList(request: Home.AddList.Request) {
+    func addList(request: Lists.AddList.Request) {
         repository.addList(withName: request.listName)
 
-        let response = Home.AddList.Resposne()
+        let response = Lists.AddList.Resposne()
         presenter?.addList(response: response)
     }
 
-    func deleteList(request: Home.DeleteList.Request) {
+    func deleteList(request: Lists.DeleteList.Request) {
         repository.deleteList(withId: request.listId)
 
-        let response = Home.DeleteList.Response()
+        let response = Lists.DeleteList.Response()
         presenter?.deleteList(response: response)
     }
 
-    func fetchLists(request: Home.FetchLists.Request) {
+    func fetchLists(request: Lists.FetchLists.Request) {
         let lists = repository.allLists()
-        let response = Home.FetchLists.Response(lists: lists)
+        let response = Lists.FetchLists.Response(lists: lists)
         presenter?.fetchLists(response: response)
     }
 }
 
-extension HomeInteractor: RemoteModelChangesListenerDelegate {
+extension ListsInteractor: RemoteModelChangesListenerDelegate {
     func shoppingListsDidChangeFromRemote(_ listener: RemoteModelChangesListener) {
-        let request = Home.FetchLists.Request()
+        let request = Lists.FetchLists.Request()
         fetchLists(request: request)
     }
 }

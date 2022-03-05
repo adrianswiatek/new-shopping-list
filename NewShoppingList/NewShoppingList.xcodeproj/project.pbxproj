@@ -59,7 +59,7 @@
 		A79E1BE227C43049005A5EA1 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE127C43049005A5EA1 /* ListsView.swift */; };
 		A79E1BE427C43055005A5EA1 /* ListsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE327C43055005A5EA1 /* ListsInteractor.swift */; };
 		A79E1BE627C4305C005A5EA1 /* ListsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */; };
-		A79E1BE827C43066005A5EA1 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE727C43066005A5EA1 /* ListsViewController.swift */; };
+		A79E1BE827C43066005A5EA1 /* ListsView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BE727C43066005A5EA1 /* ListsView+Controller.swift */; };
 		A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E1BEC27C43084005A5EA1 /* ListsModel.swift */; };
 		A7EB752527C2813E00874CAA /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752327C2813E00874CAA /* Main.xcdatamodeld */; };
 		A7EB752827C282CD00874CAA /* CoreDataMainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EB752727C282CD00874CAA /* CoreDataMainRepository.swift */; };
@@ -70,7 +70,7 @@
 		E89AD81E27CADC9C00821775 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81D27CADC9C00821775 /* AddListView.swift */; };
 		E89AD82027CADE3500821775 /* AddListIinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81F27CADE3500821775 /* AddListIinteractor.swift */; };
 		E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82127CADE3B00821775 /* AddListPresenter.swift */; };
-		E89AD82427CADE4400821775 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82327CADE4400821775 /* AddListViewController.swift */; };
+		E89AD82427CADE4400821775 /* AddListView+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82327CADE4400821775 /* AddListView+Controller.swift */; };
 		E89AD82627CADE7C00821775 /* AddListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82527CADE7C00821775 /* AddListModel.swift */; };
 		E89AD82827CAEC4200821775 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82727CAEC4200821775 /* Configurator.swift */; };
 		E89F40DB27CBDEAD006F76E4 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F40DA27CBDEAD006F76E4 /* ListsView.swift */; };
@@ -243,7 +243,7 @@
 		A79E1BE127C43049005A5EA1 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		A79E1BE327C43055005A5EA1 /* ListsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsInteractor.swift; sourceTree = "<group>"; };
 		A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsPresenter.swift; sourceTree = "<group>"; };
-		A79E1BE727C43066005A5EA1 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		A79E1BE727C43066005A5EA1 /* ListsView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListsView+Controller.swift"; sourceTree = "<group>"; };
 		A79E1BEC27C43084005A5EA1 /* ListsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsModel.swift; sourceTree = "<group>"; };
 		A7EB752427C2813E00874CAA /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		A7EB752727C282CD00874CAA /* CoreDataMainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMainRepository.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		E89AD81D27CADC9C00821775 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		E89AD81F27CADE3500821775 /* AddListIinteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListIinteractor.swift; sourceTree = "<group>"; };
 		E89AD82127CADE3B00821775 /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
-		E89AD82327CADE4400821775 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
+		E89AD82327CADE4400821775 /* AddListView+Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddListView+Controller.swift"; sourceTree = "<group>"; };
 		E89AD82527CADE7C00821775 /* AddListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListModel.swift; sourceTree = "<group>"; };
 		E89AD82727CAEC4200821775 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		E89F40DA27CBDEAD006F76E4 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
@@ -616,7 +616,7 @@
 				A79E1BEC27C43084005A5EA1 /* ListsModel.swift */,
 				A79E1BE527C4305C005A5EA1 /* ListsPresenter.swift */,
 				A79E1BE127C43049005A5EA1 /* ListsView.swift */,
-				A79E1BE727C43066005A5EA1 /* ListsViewController.swift */,
+				A79E1BE727C43066005A5EA1 /* ListsView+Controller.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -639,7 +639,7 @@
 				E89AD82527CADE7C00821775 /* AddListModel.swift */,
 				E89AD82127CADE3B00821775 /* AddListPresenter.swift */,
 				E89AD81D27CADC9C00821775 /* AddListView.swift */,
-				E89AD82327CADE4400821775 /* AddListViewController.swift */,
+				E89AD82327CADE4400821775 /* AddListView+Controller.swift */,
 			);
 			path = AddItem;
 			sourceTree = "<group>";
@@ -1097,14 +1097,14 @@
 				A729865927C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld in Sources */,
 				E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */,
 				A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */,
-				A79E1BE827C43066005A5EA1 /* ListsViewController.swift in Sources */,
+				A79E1BE827C43066005A5EA1 /* ListsView+Controller.swift in Sources */,
 				E89FEEEB27CED7C300D4C20F /* ShoppingListEntity.swift in Sources */,
 				A79E1BE227C43049005A5EA1 /* ListsView.swift in Sources */,
 				A729865627C1622B0074CD74 /* Persistence.swift in Sources */,
 				A701EAC627C57F1300705208 /* NSManagedObjectExtensions.swift in Sources */,
 				A729864F27C1622A0074CD74 /* ContentView.swift in Sources */,
 				A701EAD227C584F600705208 /* CoreDataMainRepository.swift in Sources */,
-				E89AD82427CADE4400821775 /* AddListViewController.swift in Sources */,
+				E89AD82427CADE4400821775 /* AddListView+Controller.swift in Sources */,
 				A729864D27C1622A0074CD74 /* NewShoppingList_iOSApp.swift in Sources */,
 				A79E1BE627C4305C005A5EA1 /* ListsPresenter.swift in Sources */,
 				A701EAD527C5858500705208 /* RemoteModelChangesListener.swift in Sources */,

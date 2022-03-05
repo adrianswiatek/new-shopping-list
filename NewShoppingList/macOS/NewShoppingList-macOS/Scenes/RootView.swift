@@ -12,6 +12,6 @@ struct RootView: View {
             configurator.listsView()
         }
         .navigationTitle("Shopping Lists")
-        .frame(minWidth: 750, minHeight: 250)
+        .frame(minWidth: 700, minHeight: 350)
     }
 }

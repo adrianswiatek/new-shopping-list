@@ -2,9 +2,9 @@ import Combine
 import Foundation
 
 protocol ListsDisplayLogic: AnyObject {
-    func addList(viewModel: Lists.AddList.ViewModel)
-    func deleteList(viewModel: Lists.DeleteList.ViewModel)
-    func fetchLists(viewModel: Lists.FetchLists.ViewModel)
+    func addList(viewModel: Lists.Add.ViewModel)
+    func deleteList(viewModel: Lists.Delete.ViewModel)
+    func fetchLists(viewModel: Lists.Fetch.ViewModel)
 }
 
 extension ListsView {
@@ -15,31 +15,34 @@ extension ListsView {
         private(set) var lists: [ShoppingList] = []
 
         func addList(withName listName: String) {
-            let request = Lists.AddList.Request(listName: listName)
+            let request = Lists.Add.Request(listName: listName)
             interactor?.addList(request: request)
         }
 
-        func addList(viewModel: Lists.AddList.ViewModel) {
+        func addList(viewModel: Lists.Add.ViewModel) {
 
         }
 
-        func deleteList(_ list: ShoppingList?) {
-            guard let listId = list?.id else { return }
+        func deleteList(withUuid listUuid: UUID?) {
+            guard let listUuid = listUuid else {
+                return
+            }
 
-            let request = Lists.DeleteList.Request(listId: listId)
+            let listId = Id<ShoppingList>.fromUUid(listUuid)
+            let request = Lists.Delete.Request(listId: listId)
             interactor?.deleteList(request: request)
         }
 
-        func deleteList(viewModel: Lists.DeleteList.ViewModel) {
+        func deleteList(viewModel: Lists.Delete.ViewModel) {
 
         }
 
         func fetchLists() {
-            let request = Lists.FetchLists.Request()
+            let request = Lists.Fetch.Request()
             interactor?.fetchLists(request: request)
         }
 
-        func fetchLists(viewModel: Lists.FetchLists.ViewModel) {
+        func fetchLists(viewModel: Lists.Fetch.ViewModel) {
             lists = viewModel.lists
         }
     }

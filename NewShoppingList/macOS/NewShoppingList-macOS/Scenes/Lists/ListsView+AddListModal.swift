@@ -5,14 +5,14 @@ extension ListsView {
         @Environment(\.dismiss)
         private var dismiss: DismissAction
 
-        @ObservedObject
+        @StateObject
         private var controller: Controller
 
         @State
         private var listName: String
 
         init(_ controller: Controller) {
-            self._controller = ObservedObject(wrappedValue: controller)
+            self._controller = StateObject(wrappedValue: controller)
             self._listName = State(wrappedValue: "")
         }
 

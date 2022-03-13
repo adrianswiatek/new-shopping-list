@@ -1,5 +1,5 @@
 enum Lists {
-    enum AddList {
+    enum Add {
         struct Request {
             let listName: String
         }
@@ -13,7 +13,7 @@ enum Lists {
         }
     }
 
-    enum DeleteList {
+    enum Delete {
         struct Request {
             let listId: Id<ShoppingList>
         }
@@ -27,7 +27,7 @@ enum Lists {
         }
     }
 
-    struct FetchLists {
+    struct Fetch {
         struct Request {
 
         }

@@ -3,23 +3,27 @@ import Foundation
 struct ShoppingList: Identifiable {
     let id: Id<ShoppingList>
     let name: String
-    let numberOfItems: Int
+    let items: [ShoppingItem]
 
-    private init(_ id: Id<ShoppingList>, _ name: String, _ numberOfItems: Int) {
+    var numberOfItems: Int {
+        items.count
+    }
+
+    private init(_ id: Id<ShoppingList>, _ name: String, _ items: [ShoppingItem]) {
         self.id = id
         self.name = name
-        self.numberOfItems = numberOfItems
+        self.items = items
     }
 }
 
 extension ShoppingList {
     final class Factory {
         static func new(withName name: String) -> ShoppingList {
-            ShoppingList(.new(), name, 0)
+            ShoppingList(.new(), name, [])
         }
 
-        static func fromRaw(id: UUID, name: String, numberOfItems: Int) -> ShoppingList {
-            ShoppingList(.fromUUid(id), name, numberOfItems)
+        static func fromRaw(id: UUID, name: String, items: [ShoppingItem]) -> ShoppingList {
+            ShoppingList(.fromUUid(id), name, items)
         }
     }
 }

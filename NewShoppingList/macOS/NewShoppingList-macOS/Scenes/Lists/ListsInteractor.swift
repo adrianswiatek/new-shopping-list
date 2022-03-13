@@ -1,14 +1,15 @@
 import Combine
 
 protocol ListsBusinessLogic {
-    func addList(request: Lists.AddList.Request)
-    func deleteList(request: Lists.DeleteList.Request)
-    func fetchLists(request: Lists.FetchLists.Request)
+    func addList(request: Lists.Add.Request)
+    func deleteList(request: Lists.Delete.Request)
+    func fetchLists(request: Lists.Fetch.Request)
 }
 
 final class ListsInteractor: ListsBusinessLogic {
     var presenter: ListsPresentationLogic?
 
+    private var remoteModelChangesCancallable: AnyCancellable?
     private let repository: MainRepository
     private let remoteChangesListener: RemoteModelChangesListener
 
@@ -18,33 +19,32 @@ final class ListsInteractor: ListsBusinessLogic {
     ) {
         self.repository = repository
         self.remoteChangesListener = remoteChangesListener
-        self.remoteChangesListener.delegate = self
+
+        self.remoteModelChangesCancallable = remoteChangesListener
+            .publisher
+            .sink { [weak self] _ in
+                let request = Lists.Fetch.Request()
+                self?.fetchLists(request: request)
+            }
     }
 
-    func addList(request: Lists.AddList.Request) {
+    func addList(request: Lists.Add.Request) {
         repository.addList(withName: request.listName)
 
-        let response = Lists.AddList.Resposne()
+        let response = Lists.Add.Resposne()
         presenter?.addList(response: response)
     }
 
-    func deleteList(request: Lists.DeleteList.Request) {
+    func deleteList(request: Lists.Delete.Request) {
         repository.deleteList(withId: request.listId)
 
-        let response = Lists.DeleteList.Response()
+        let response = Lists.Delete.Response()
         presenter?.deleteList(response: response)
     }
 
-    func fetchLists(request: Lists.FetchLists.Request) {
+    func fetchLists(request: Lists.Fetch.Request) {
         let lists = repository.allLists()
-        let response = Lists.FetchLists.Response(lists: lists)
+        let response = Lists.Fetch.Response(lists: lists)
         presenter?.fetchLists(response: response)
-    }
-}
-
-extension ListsInteractor: RemoteModelChangesListenerDelegate {
-    func shoppingListsDidChangeFromRemote(_ listener: RemoteModelChangesListener) {
-        let request = Lists.FetchLists.Request()
-        fetchLists(request: request)
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ItemEntity" representedClassName="ItemEntity" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ShoppingItemEntity" representedClassName="ShoppingItemEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ShoppingListEntity" inverseName="items" inverseEntity="ShoppingListEntity"/>
+        <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingListEntity" inverseName="shoppingItems" inverseEntity="ShoppingListEntity"/>
     </entity>
     <entity name="ShoppingListEntity" representedClassName="ShoppingListEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="shoppingList" inverseEntity="ItemEntity"/>
+        <relationship name="shoppingItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ShoppingItemEntity" inverseName="shoppingList" inverseEntity="ShoppingItemEntity"/>
     </entity>
     <elements>
-        <element name="ItemEntity" positionX="-63" positionY="0" width="128" height="74"/>
+        <element name="ShoppingItemEntity" positionX="-63" positionY="0" width="128" height="74"/>
         <element name="ShoppingListEntity" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

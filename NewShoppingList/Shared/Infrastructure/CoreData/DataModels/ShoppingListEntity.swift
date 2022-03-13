@@ -5,7 +5,7 @@ import CoreData
 class ShoppingListEntity: NSManagedObject, Identifiable {
     @NSManaged var id: UUID
     @NSManaged var name: String
-    @NSManaged var items: NSSet?
+    @NSManaged var shoppingItems: NSSet
 
     @nonobjc
     static func fetchRequest() -> NSFetchRequest<ShoppingListEntity> {
@@ -27,7 +27,9 @@ extension ShoppingListEntity {
         ShoppingList.Factory.fromRaw(
             id: id,
             name: name,
-            numberOfItems: items?.count ?? 0
+            items: shoppingItems
+                .map { $0 as? ShoppingItemEntity }
+                .compactMap { $0?.toShoppingItem() }
         )
     }
 
@@ -44,10 +46,10 @@ extension ShoppingListEntity {
 
 extension ShoppingListEntity {
     @objc(addItemsObject:)
-    @NSManaged func addToItems(_ value: ItemEntity)
+    @NSManaged func addToItems(_ value: ShoppingItemEntity)
 
     @objc(removeItemsObject:)
-    @NSManaged func removeFromItems(_ value: ItemEntity)
+    @NSManaged func removeFromItems(_ value: ShoppingItemEntity)
 
     @objc(addItems:)
     @NSManaged func addToItems(_ values: NSSet)

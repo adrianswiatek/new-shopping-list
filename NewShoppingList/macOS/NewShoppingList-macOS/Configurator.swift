@@ -25,7 +25,10 @@ final class Configurator {
     }
 
     func itemsView(forList list: ShoppingList) -> some View {
-        let interactor = ItemsInteractor()
+        let interactor = ItemsInteractor(
+            repository: mainRepository,
+            remoteChangesListener: remoteChangesListener
+        )
         let presenter = ItemsPresenter()
         let controller = ItemsView.Controller(list: list)
 

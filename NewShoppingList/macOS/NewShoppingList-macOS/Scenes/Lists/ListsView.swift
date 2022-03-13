@@ -1,19 +1,19 @@
 import SwiftUI
 
 struct ListsView: View {
-    @ObservedObject
+    @StateObject
     private var controller: Controller
-
-    @State
-    private var selectedList: ShoppingList?
 
     @State
     private var isAddListModalVisible: Bool = false
 
+    @State
+    private var selectedUuid: UUID?
+
     private let configurator: Configurator
 
     init(controller: Controller, configurator: Configurator) {
-        self.controller = controller
+        self._controller = StateObject(wrappedValue: controller)
         self.configurator = configurator
     }
 
@@ -21,12 +21,13 @@ struct ListsView: View {
         VStack {
             List {
                 ForEach(controller.lists) { list in
-                    NavigationLink(tag: list, selection: $selectedList) {
+//                    NavigationLink(list.name) {
+//                        configurator.itemsView(forList: list)
+//                    }
+                    NavigationLink(list.name, tag: list.id.toUuid(), selection: $selectedUuid, destination: {
                         configurator.itemsView(forList: list)
-                    } label: {
-                        Label(list.name, systemImage: "chevron.right")
-                            .badge(list.numberOfItems)
-                    }
+                    })
+                    .badge(list.numberOfItems)
                 }
             }
             .listStyle(.inset)
@@ -42,12 +43,12 @@ struct ListsView: View {
                 ToolbarItem {
                     Button {
                         withAnimation {
-                            controller.deleteList(selectedList)
+                            controller.deleteList(withUuid: selectedUuid)
                         }
                     } label: {
                         Image(systemName: "minus")
                     }
-                    .disabled(selectedList == nil)
+                    .disabled(selectedUuid == nil)
                 }
 
                 ToolbarItem {

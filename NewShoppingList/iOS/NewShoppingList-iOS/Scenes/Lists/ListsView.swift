@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ListsView: View {
-    @ObservedObject
+    @StateObject
     private var controller: Controller
 
     private let configurator: Configurator
 
     init(controller: Controller, configurator: Configurator) {
-        self.controller = controller
+        self._controller = StateObject(wrappedValue: controller)
         self.configurator = configurator
     }
 
@@ -15,12 +15,13 @@ struct ListsView: View {
         NavigationView {
             List {
                 ForEach(controller.lists) { list in
-                    Text(list.name)
+                    Label(list.name, systemImage: "chevron.right")
                 }
                 .onDelete {
                     controller.delete($0)
                 }
             }
+            .listStyle(.plain)
             .refreshable {
                 controller.fetch()
             }

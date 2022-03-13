@@ -1,11 +1,12 @@
 import Combine
+import SwiftUI
 
 protocol AddListDisplayLogic {
     func save(viewModel: AddList.Save.ViewModel)
 }
 
 extension AddListView {
-    final class Controller: ObservableObject {
+    final class Controller: NSObject, ObservableObject {
         var interactor: AddListBusinessLogic?
 
         @Published
@@ -15,7 +16,7 @@ extension AddListView {
             listName.isEmpty
         }
 
-        var onListSaved: (() -> Void)?
+        var dismissAction: DismissAction?
 
         func reset() {
             listName = ""
@@ -27,7 +28,8 @@ extension AddListView {
         }
 
         func save(viewModel: AddList.Save.ViewModel) {
-            onListSaved?()
+            dismissAction?()
+            reset()
         }
     }
 }

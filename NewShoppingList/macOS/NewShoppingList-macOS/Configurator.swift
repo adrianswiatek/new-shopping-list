@@ -2,17 +2,17 @@ import SwiftUI
 
 final class Configurator {
     private let mainRepository: MainRepository
-    private let remoteModelChangesListener: RemoteModelChangesListener
+    private let remoteChangesListener: RemoteModelChangesListener
 
     init() {
         self.mainRepository = CoreDataMainRepository()
-        self.remoteModelChangesListener = RemoteModelChangesListener()
+        self.remoteChangesListener = RemoteModelChangesListener()
     }
 
     func listsView() -> some View {
         let interactor = ListsInteractor(
             repository: mainRepository,
-            remoteChangesListener: remoteModelChangesListener
+            remoteChangesListener: remoteChangesListener
         )
         let presenter = ListsPresenter()
         let controller = ListsView.Controller()
@@ -24,17 +24,18 @@ final class Configurator {
         return ListsView(controller: controller, configurator: self)
     }
 
-    func addListView() -> some View {
-        let interactor = AddListInteractor(
-            repository: mainRepository
+    func itemsView(forList list: ShoppingList) -> some View {
+        let interactor = ItemsInteractor(
+            repository: mainRepository,
+            remoteChangesListener: remoteChangesListener
         )
-        let presenter = AddListPresenter()
-        let controller = AddListView.Controller()
+        let presenter = ItemsPresenter()
+        let controller = ItemsView.Controller(list: list)
 
+        controller.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = controller
-        controller.interactor = interactor
 
-        return AddListView(controller: controller)
+        return ItemsView(controller: controller)
     }
 }

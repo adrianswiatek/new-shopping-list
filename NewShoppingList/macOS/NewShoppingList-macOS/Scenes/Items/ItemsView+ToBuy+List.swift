@@ -21,51 +21,40 @@ extension ItemsView {
 
                             Spacer()
 
-                            Button {
+                            ListButton(data: .delete(item: item, isEmphasized: isEmphasized(item))) {
                                 withAnimation {
                                     controller.delete(item)
                                 }
-                            } label: {
-                                Image(systemName: "minus.circle")
-                                    .font(.title3)
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .foregroundColor(item == itemToEmphasize ? .primary : Color(.displayP3, white: 1, opacity: 0.1))
 
-                            Button {
-                                print("Edit item: \(item)")
-                            } label: {
-                                Image(systemName: "pencil")
-                                    .font(.title3)
+                            ListButton(data: .edit(item: item, isEmphasized: isEmphasized(item))) {
+                                print("Edit item")
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .foregroundColor(item == itemToEmphasize ? .primary : Color(.displayP3, white: 1, opacity: 0.1))
 
-                            Button {
-                                print("Move item \(item) to basket")
-                            } label: {
-                                Image(systemName: "cart.badge.plus")
-                                    .font(.title3)
+                            ListButton(data: .moveToBasket(item: item, isEmphasized: isEmphasized(item))) {
+                                print("Move to the basket")
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .foregroundColor(item == itemToEmphasize ? .primary : Color(.displayP3, white: 1, opacity: 0.1))
                         }
                         .padding(.horizontal, 8)
                         .background(
                             Rectangle()
                                 .inset(by: -5)
-                                .fill(item == itemToEmphasize ? Color(.displayP3, white: 1, opacity: 0.05) : .clear)
+                                .fill(isEmphasized(item) ? Color.primary.opacity(0.05) : .clear)
                         )
                         .onHover { isHovered in
                             itemToEmphasize = isHovered ? item : nil
                         }
 
                         Rectangle()
-                            .fill(Color(.displayP3, white: 1, opacity: 0.05))
+                            .fill(Color.primary.opacity(0.05))
                             .frame(height: 1)
                     }
                 }
             }
+        }
+
+        private func isEmphasized(_ item: ShoppingItem) -> Bool {
+            item == itemToEmphasize
         }
     }
 }

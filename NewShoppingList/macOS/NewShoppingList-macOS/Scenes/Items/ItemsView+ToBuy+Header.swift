@@ -40,7 +40,7 @@ extension ItemsView {
                 .background(
                     RoundedRectangle(cornerRadius: 4)
                         .inset(by: -4)
-                        .fill(isTextFieldHovered ? Color(white: 1, opacity: 0.05) : Color(white: 1, opacity: 0.025))
+                        .fill(isTextFieldHovered ? Color.primary.opacity(0.1) : Color.primary.opacity(0.05))
                 )
                 .padding(.horizontal, 4)
                 .onHover { isHovered in
@@ -56,6 +56,7 @@ extension ItemsView {
                 quickAddItemName = ""
             } label: {
                 Image(systemName: "plus")
+                    .foregroundColor(.white)
                     .padding(.horizontal, 4)
             }
             .buttonStyle(BorderedProminentButtonStyle())

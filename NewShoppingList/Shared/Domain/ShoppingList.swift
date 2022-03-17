@@ -9,10 +9,18 @@ struct ShoppingList: Identifiable {
         items.count
     }
 
+    var itemsToBuy: [ShoppingItem] {
+        items.filter { $0.state == .toBuy }
+    }
+
+    var itemsInBasket: [ShoppingItem] {
+        items.filter { $0.state == .inBasket }
+    }
+
     private init(_ id: Id<ShoppingList>, _ name: String, _ items: [ShoppingItem]) {
         self.id = id
         self.name = name
-        self.items = items
+        self.items = items.sorted { $0.name < $1.name }
     }
 }
 

@@ -14,7 +14,7 @@ extension ItemsView {
 
         var body: some View {
             SwiftUI.List {
-                ForEach(controller.items) { item in
+                ForEach(controller.itemsToBuy) { item in
                     VStack {
                         HStack {
                             Text(item.name)
@@ -32,7 +32,9 @@ extension ItemsView {
                             }
 
                             ListButton(data: .moveToBasket(item: item, isEmphasized: isEmphasized(item))) {
-                                print("Move to the basket")
+                                withAnimation {
+                                    controller.moveToBasket(item)
+                                }
                             }
                         }
                         .padding(.horizontal, 8)

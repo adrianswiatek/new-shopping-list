@@ -85,6 +85,7 @@
 		E87E3CB727DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
 		E87E3CB827DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
 		E87E3CB927DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
+		E8961A4E27E0B7BD00AF723B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */; };
 		E89AD81E27CADC9C00821775 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81D27CADC9C00821775 /* AddListView.swift */; };
 		E89AD82027CADE3500821775 /* AddListIinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81F27CADE3500821775 /* AddListIinteractor.swift */; };
 		E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82127CADE3B00821775 /* AddListPresenter.swift */; };
@@ -275,6 +276,7 @@
 		E87E3CAE27DE6F46007F7D91 /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		E87E3CB227DE75F3007F7D91 /* ItemsView+ToBuy+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+ToBuy+Header.swift"; sourceTree = "<group>"; };
 		E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+ToBuy+List.swift"; sourceTree = "<group>"; };
+		E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89AD81D27CADC9C00821775 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		E89AD81F27CADE3500821775 /* AddListIinteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListIinteractor.swift; sourceTree = "<group>"; };
 		E89AD82127CADE3B00821775 /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
+				E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */,
 				E8DD2C3127CFDC3600B78AD2 /* Configurator.swift */,
 				A729861927C161B20074CD74 /* ContentView.swift */,
 				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
@@ -1068,6 +1071,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8961A4E27E0B7BD00AF723B /* AppDelegate.swift in Sources */,
 				A72986CA27C164BA0074CD74 /* ListsPresenter.swift in Sources */,
 				A72986D427C168D00074CD74 /* ListsView+AddListModal.swift in Sources */,
 				A72986D027C1674C0074CD74 /* ListsView+Controller.swift in Sources */,

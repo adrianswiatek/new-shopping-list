@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ShoppingItemEntity" representedClassName="ShoppingItemEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="shoppingList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ShoppingListEntity" inverseName="shoppingItems" inverseEntity="ShoppingListEntity"/>
     </entity>
     <entity name="ShoppingListEntity" representedClassName="ShoppingListEntity" syncable="YES">
@@ -11,7 +12,7 @@
         <relationship name="shoppingItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ShoppingItemEntity" inverseName="shoppingList" inverseEntity="ShoppingItemEntity"/>
     </entity>
     <elements>
-        <element name="ShoppingItemEntity" positionX="-63" positionY="0" width="128" height="74"/>
+        <element name="ShoppingItemEntity" positionX="-63" positionY="0" width="128" height="89"/>
         <element name="ShoppingListEntity" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

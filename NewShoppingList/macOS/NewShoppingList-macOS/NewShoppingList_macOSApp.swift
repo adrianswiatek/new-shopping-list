@@ -2,6 +2,9 @@ import SwiftUI
 
 @main
 struct NewShoppingList_macOSApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate: AppDelegate
+
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

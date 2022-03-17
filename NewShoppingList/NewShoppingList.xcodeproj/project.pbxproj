@@ -73,6 +73,9 @@
 		E8061CAA27DE832C00178188 /* ShoppingItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061CA527DE820F00178188 /* ShoppingItemEntity.swift */; };
 		E8061CAB27DE832D00178188 /* ShoppingItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061CA527DE820F00178188 /* ShoppingItemEntity.swift */; };
 		E8061CAC27DE832E00178188 /* ShoppingItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8061CA527DE820F00178188 /* ShoppingItemEntity.swift */; };
+		E87A1E4A27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A1E4927DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift */; };
+		E87A1E4B27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A1E4927DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift */; };
+		E87A1E4C27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A1E4927DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift */; };
 		E87E3CAF27DE6F46007F7D91 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CAE27DE6F46007F7D91 /* ShoppingItem.swift */; };
 		E87E3CB027DE6F46007F7D91 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CAE27DE6F46007F7D91 /* ShoppingItem.swift */; };
 		E87E3CB127DE6F46007F7D91 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CAE27DE6F46007F7D91 /* ShoppingItem.swift */; };
@@ -82,6 +85,7 @@
 		E87E3CB727DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
 		E87E3CB827DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
 		E87E3CB927DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */; };
+		E8961A4E27E0B7BD00AF723B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */; };
 		E89AD81E27CADC9C00821775 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81D27CADC9C00821775 /* AddListView.swift */; };
 		E89AD82027CADE3500821775 /* AddListIinteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD81F27CADE3500821775 /* AddListIinteractor.swift */; };
 		E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AD82127CADE3B00821775 /* AddListPresenter.swift */; };
@@ -268,9 +272,11 @@
 		A7EB753B27C2B91D00874CAA /* RemoteModelChangesListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteModelChangesListener.swift; sourceTree = "<group>"; };
 		E8061CA327DE820F00178188 /* ShoppingListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListEntity.swift; sourceTree = "<group>"; };
 		E8061CA527DE820F00178188 /* ShoppingItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemEntity.swift; sourceTree = "<group>"; };
+		E87A1E4927DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+ToBuy+List+Button.swift"; sourceTree = "<group>"; };
 		E87E3CAE27DE6F46007F7D91 /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		E87E3CB227DE75F3007F7D91 /* ItemsView+ToBuy+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+ToBuy+Header.swift"; sourceTree = "<group>"; };
 		E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemsView+ToBuy+List.swift"; sourceTree = "<group>"; };
+		E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E89AD81D27CADC9C00821775 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		E89AD81F27CADE3500821775 /* AddListIinteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListIinteractor.swift; sourceTree = "<group>"; };
 		E89AD82127CADE3B00821775 /* AddListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListPresenter.swift; sourceTree = "<group>"; };
@@ -451,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				A729862527C161B30074CD74 /* NewShoppingList_macOS.entitlements */,
+				E8961A4D27E0B7BD00AF723B /* AppDelegate.swift */,
 				E8DD2C3127CFDC3600B78AD2 /* Configurator.swift */,
 				A729861927C161B20074CD74 /* ContentView.swift */,
 				A729861727C161B20074CD74 /* NewShoppingList_macOSApp.swift */,
@@ -718,6 +725,7 @@
 				E8B94A5527DE87F000CC3486 /* ItemsView+ToBuy.swift */,
 				E87E3CB227DE75F3007F7D91 /* ItemsView+ToBuy+Header.swift */,
 				E87E3CB627DE7907007F7D91 /* ItemsView+ToBuy+List.swift */,
+				E87A1E4927DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -1063,6 +1071,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8961A4E27E0B7BD00AF723B /* AppDelegate.swift in Sources */,
 				A72986CA27C164BA0074CD74 /* ListsPresenter.swift in Sources */,
 				A72986D427C168D00074CD74 /* ListsView+AddListModal.swift in Sources */,
 				A72986D027C1674C0074CD74 /* ListsView+Controller.swift in Sources */,
@@ -1078,6 +1087,7 @@
 				E8DD2C2E27CFDBF100B78AD2 /* RootView.swift in Sources */,
 				E8DD2C3227CFDC3600B78AD2 /* Configurator.swift in Sources */,
 				E87E3CB427DE75F3007F7D91 /* ItemsView+ToBuy+Header.swift in Sources */,
+				E87A1E4B27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */,
 				A72986CD27C1662D0074CD74 /* ListsModel.swift in Sources */,
 				E87E3CB827DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */,
 				E87E3CB027DE6F46007F7D91 /* ShoppingItem.swift in Sources */,
@@ -1145,6 +1155,7 @@
 				E89F40E927CBE6C1006F76E4 /* ShoppingList.swift in Sources */,
 				A701EABC27C5757400705208 /* Id.swift in Sources */,
 				E89AD82627CADE7C00821775 /* AddListModel.swift in Sources */,
+				E87A1E4A27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */,
 				A701EAD727C5859000705208 /* Main.xcdatamodeld in Sources */,
 				E87E3CB727DE7907007F7D91 /* ItemsView+ToBuy+List.swift in Sources */,
 			);
@@ -1174,6 +1185,7 @@
 				E87E3CB527DE75F3007F7D91 /* ItemsView+ToBuy+Header.swift in Sources */,
 				E89F40E427CBE631006F76E4 /* MainRepository.swift in Sources */,
 				E89F40EA27CBE6C3006F76E4 /* ShoppingList.swift in Sources */,
+				E87A1E4C27DFE29600DA0F86 /* ItemsView+ToBuy+List+Button.swift in Sources */,
 				E8B94A5827DE87F000CC3486 /* ItemsView+ToBuy.swift in Sources */,
 				A729868E27C1625C0074CD74 /* NotificationController.swift in Sources */,
 				E89F40E527CBE63C006F76E4 /* RemoteModelChangesListener.swift in Sources */,

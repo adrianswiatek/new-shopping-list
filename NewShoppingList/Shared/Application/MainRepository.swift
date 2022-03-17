@@ -5,5 +5,6 @@ protocol MainRepository {
     func deleteList(withId listId: Id<ShoppingList>)
 
     func addItem(withName itemName: String, toListWithId listId: Id<ShoppingList>)
+    func changeStateOfItem(withId itemId: Id<ShoppingItem>, to state: ShoppingItem.State)
     func deleteItem(withId itemId: Id<ShoppingItem>)
 }

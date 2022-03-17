@@ -42,4 +42,19 @@ enum Items {
             let list: ShoppingList
         }
     }
+
+    enum MoveToBasket {
+        struct Request {
+            let listId: Id<ShoppingList>
+            let itemId: Id<ShoppingItem>
+        }
+
+        struct Response {
+            let list: ShoppingList
+        }
+
+        struct ViewModel {
+            let list: ShoppingList
+        }
+    }
 }

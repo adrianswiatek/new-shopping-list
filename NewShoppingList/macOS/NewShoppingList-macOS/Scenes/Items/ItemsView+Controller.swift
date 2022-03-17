@@ -4,6 +4,7 @@ protocol ItemsDisplayLogic: AnyObject {
     func add(viewModel: Items.Add.ViewModel)
     func delete(viewModel: Items.Delete.ViewModel)
     func fetch(viewModel: Items.Fetch.ViewModel)
+    func moveToBasket(viewModel: Items.MoveToBasket.ViewModel)
 }
 
 extension ItemsView {
@@ -11,19 +12,22 @@ extension ItemsView {
         var interactor: ItemsBusinessLogic?
 
         @Published
-        private(set) var items: [ShoppingItem]
+        private(set) var itemsToBuy: [ShoppingItem]
+
+        @Published
+        private(set) var itemsInBasket: [ShoppingItem]
 
         private var list: ShoppingList {
             didSet {
-                items = list.items.sorted {
-                    $0.name < $1.name
-                }
+                itemsToBuy = list.itemsToBuy
+                itemsInBasket = list.itemsInBasket
             }
         }
 
         init(list: ShoppingList) {
             self.list = list
-            self.items = list.items
+            self.itemsToBuy = list.itemsToBuy
+            self.itemsInBasket = list.itemsInBasket
         }
 
         func add(_ itemName: String) {
@@ -50,6 +54,15 @@ extension ItemsView {
         }
 
         func fetch(viewModel: Items.Fetch.ViewModel) {
+            list = viewModel.list
+        }
+
+        func moveToBasket(_ item: ShoppingItem) {
+            let request = Items.MoveToBasket.Request(listId: list.id, itemId: item.id)
+            interactor?.moveToBasket(request: request)
+        }
+
+        func moveToBasket(viewModel: Items.MoveToBasket.ViewModel) {
             list = viewModel.list
         }
     }

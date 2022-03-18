@@ -24,7 +24,7 @@ struct ListsView: View {
                     NavigationLink(list.name, tag: list.id, selection: $selectedId, destination: {
                         configurator.itemsView(forList: list)
                     })
-                    .badge(list.numberOfItems)
+                    .badge(list.numberOfItems(.toBuy))
                 }
             }
             .listStyle(.inset)

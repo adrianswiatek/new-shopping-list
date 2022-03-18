@@ -3,6 +3,7 @@ protocol ItemsPresentationLogic {
     func delete(response: Items.Delete.Response)
     func fetch(response: Items.Fetch.Response)
     func moveToBasket(response: Items.MoveToBasket.Response)
+    func removeFromBasket(response: Items.RemoveFromBasket.Response)
 }
 
 final class ItemsPresenter: ItemsPresentationLogic {
@@ -26,5 +27,10 @@ final class ItemsPresenter: ItemsPresentationLogic {
     func moveToBasket(response: Items.MoveToBasket.Response) {
         let viewModel = Items.MoveToBasket.ViewModel(list: response.list)
         viewController?.moveToBasket(viewModel: viewModel)
+    }
+
+    func removeFromBasket(response: Items.RemoveFromBasket.Response) {
+        let viewModel = Items.RemoveFromBasket.ViewModel(list: response.list)
+        viewController?.removeFromBasket(viewModel: viewModel)
     }
 }

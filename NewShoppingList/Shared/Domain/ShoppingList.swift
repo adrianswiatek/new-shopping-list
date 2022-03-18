@@ -3,24 +3,28 @@ import Foundation
 struct ShoppingList: Identifiable {
     let id: Id<ShoppingList>
     let name: String
-    let items: [ShoppingItem]
 
-    var numberOfItems: Int {
-        items.count
-    }
-
-    var itemsToBuy: [ShoppingItem] {
-        items.filter { $0.state == .toBuy }
-    }
-
-    var itemsInBasket: [ShoppingItem] {
-        items.filter { $0.state == .inBasket }
-    }
+    private let items: [ShoppingItem]
 
     private init(_ id: Id<ShoppingList>, _ name: String, _ items: [ShoppingItem]) {
         self.id = id
         self.name = name
         self.items = items.sorted { $0.name < $1.name }
+    }
+
+    func items(_ state: ShoppingItem.State? = nil) -> [ShoppingItem] {
+        switch state {
+        case .toBuy:
+            return items.filter { $0.state == .toBuy }
+        case .inBasket:
+            return items.filter { $0.state == .inBasket }
+        default:
+            return items
+        }
+    }
+
+    func numberOfItems(_ state: ShoppingItem.State? = nil) -> Int {
+        items(state).count
     }
 }
 

@@ -10,12 +10,16 @@ extension ItemsView {
         }
 
         var body: some View {
-            Text("There are no items in the basket")
-                .badge(10)
-                .tabItem {
-                    Image(systemName: "cart.fill")
-                    Text("In the basket")
+            VStack {
+                if controller.itemsInBasket.isEmpty {
+                    Text("There are no items in the basket")
+                } else {
+                    InBasketList(controller)
                 }
+            }
+            .tabItem {
+                Text("In the basket")
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension ItemsView {
-    struct ToBuyList: View {
+    struct InBasketList: View {
         @StateObject
         private var controller: Controller
 
@@ -10,19 +10,16 @@ extension ItemsView {
         }
 
         var body: some View {
-            List(controller.itemsToBuy) { item in
+            List(controller.itemsInBasket) { item in
                 ListCell(item: item, buttonFactories: [
                     ListButtonFactoryCreator.delete {
                         withAnimation {
                             controller.delete(item)
                         }
                     },
-                    ListButtonFactoryCreator.edit {
-                        print("Edit item")
-                    },
-                    ListButtonFactoryCreator.moveToBasket {
+                    ListButtonFactoryCreator.removeFromBasket {
                         withAnimation {
-                            controller.moveToBasket(item)
+                            controller.removeFromBasket(item)
                         }
                     }
                 ])

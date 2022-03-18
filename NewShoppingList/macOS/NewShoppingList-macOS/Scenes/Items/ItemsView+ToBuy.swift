@@ -12,10 +12,16 @@ extension ItemsView {
         var body: some View {
             VStack {
                 Header(controller)
-                List(controller)
+
+                if controller.itemsToBuy.isEmpty {
+                    Spacer()
+                    Text("There are not items to buy")
+                    Spacer()
+                } else {
+                    ToBuyList(controller)
+                }
             }
             .tabItem {
-                Image(systemName: "cart")
                 Text("To buy")
             }
         }

@@ -100,24 +100,6 @@ final class CoreDataMainRepository: NSObject, MainRepository {
         context.saveChanges()
     }
 
-    func changeStateOfItem(withId itemId: Id<ShoppingItem>, to state: ShoppingItem.State) {
-        let request: NSFetchRequest<ShoppingItemEntity> = ShoppingItemEntity.fetchRequest()
-        request.predicate = .init(format: "id == %@", itemId.toUuid() as CVarArg)
-
-        guard let entities = try? context.fetch(request) else {
-            assertionFailure("Unable to execute request.")
-            return
-        }
-
-        guard let entity = entities.first else {
-            assertionFailure("Unable to find entity to delete.")
-            return
-        }
-
-        entity.state = state.toInt()
-        context.saveChanges()
-    }
-
     func deleteItem(withId itemId: Id<ShoppingItem>) {
         let request: NSFetchRequest<ShoppingItemEntity> = ShoppingItemEntity.fetchRequest()
         request.predicate = .init(format: "id == %@", itemId.toUuid() as CVarArg)
@@ -133,6 +115,25 @@ final class CoreDataMainRepository: NSObject, MainRepository {
         }
 
         context.delete(entity)
+        context.saveChanges()
+    }
+
+    func updateItem(_ item: ShoppingItem) {
+        let request: NSFetchRequest<ShoppingItemEntity> = ShoppingItemEntity.fetchRequest()
+        request.predicate = .init(format: "id == %@", item.id.toUuid() as CVarArg)
+
+        guard let entities = try? context.fetch(request) else {
+            assertionFailure("Unable to execute request.")
+            return
+        }
+
+        guard let entity = entities.first else {
+            assertionFailure("Unable to find entity to delete.")
+            return
+        }
+
+        entity.name = item.name
+        entity.state = item.state.toInt()
         context.saveChanges()
     }
 }

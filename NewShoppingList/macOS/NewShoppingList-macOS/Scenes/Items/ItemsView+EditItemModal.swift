@@ -1,7 +1,7 @@
 import SwiftUI
 
-extension ListsView {
-    struct AddListModal: View {
+extension ItemsView {
+    struct EditItemModal: View {
         @Environment(\.dismiss)
         private var dismiss: DismissAction
 
@@ -9,11 +9,14 @@ extension ListsView {
         private var controller: Controller
 
         @State
-        private var listName: String
+        private var itemName: String
 
-        init(_ controller: Controller) {
+        private let item: ShoppingItem
+
+        init(item: ShoppingItem, controller: Controller) {
+            self.item = item
+            self._itemName = State(wrappedValue: item.name)
             self._controller = StateObject(wrappedValue: controller)
-            self._listName = State(wrappedValue: "")
         }
 
         var body: some View {
@@ -29,12 +32,12 @@ extension ListsView {
         }
 
         private var title: some View {
-            Text("Add List")
+            Text("Edit Item")
         }
 
         private var form: some View {
             Form {
-                TextField("List name", text: $listName)
+                TextField("Item name", text: $itemName)
                     .textFieldStyle(.roundedBorder)
             }
             .padding(12)
@@ -54,16 +57,15 @@ extension ListsView {
                 Spacer()
 
                 Button {
-                    withAnimation {
-                        controller.addList(withName: listName)
-                    }
+                    controller.update(itemName: itemName, inItem: item)
                     dismiss()
                 } label: {
                     Text("Save")
                         .frame(width: 50)
                 }
-                .keyboardShortcut(.return)
-                .disabled(listName.isEmpty)
+                .keyboardShortcut(.defaultAction)
+                .keyboardShortcut(KeyEquivalent.return)
+                .disabled(itemName.isEmpty)
             }
             .padding(.top, 8)
         }

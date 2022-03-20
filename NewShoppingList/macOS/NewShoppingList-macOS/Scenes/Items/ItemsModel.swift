@@ -43,25 +43,10 @@ enum Items {
         }
     }
 
-    enum MoveToBasket {
+    enum Update {
         struct Request {
             let listId: Id<ShoppingList>
-            let itemId: Id<ShoppingItem>
-        }
-
-        struct Response {
-            let list: ShoppingList
-        }
-
-        struct ViewModel {
-            let list: ShoppingList
-        }
-    }
-
-    enum RemoveFromBasket {
-        struct Request {
-            let listId: Id<ShoppingList>
-            let itemId: Id<ShoppingItem>
+            let item: ShoppingItem
         }
 
         struct Response {

@@ -5,8 +5,12 @@ extension ItemsView {
         @StateObject
         private var controller: Controller
 
+        @State
+        private var editingItem: ShoppingItem?
+
         init(_ controller: Controller) {
             self._controller = StateObject(wrappedValue: controller)
+            self._editingItem = State(wrappedValue: nil)
         }
 
         var body: some View {
@@ -18,7 +22,7 @@ extension ItemsView {
                         }
                     },
                     ListButtonFactoryCreator.edit {
-                        print("Edit item")
+                        editingItem = item
                     },
                     ListButtonFactoryCreator.moveToBasket {
                         withAnimation {
@@ -26,6 +30,9 @@ extension ItemsView {
                         }
                     }
                 ])
+            }
+            .sheet(item: $editingItem) { item in
+                EditItemModal(item: item, controller: controller)
             }
         }
     }

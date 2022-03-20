@@ -5,6 +5,14 @@ struct ShoppingItem: Identifiable {
     let name: String
     let state: State
 
+    func withName(_ name: String) -> ShoppingItem {
+        ShoppingItem(id, name, state)
+    }
+
+    func withState(_ state: State) -> ShoppingItem {
+        ShoppingItem(id, name, state)
+    }
+
     private init(_ id: Id<ShoppingItem>, _ name: String, _ state: State) {
         self.id = id
         self.name = name

@@ -4,8 +4,7 @@ protocol ItemsDisplayLogic: AnyObject {
     func add(viewModel: Items.Add.ViewModel)
     func delete(viewModel: Items.Delete.ViewModel)
     func fetch(viewModel: Items.Fetch.ViewModel)
-    func moveToBasket(viewModel: Items.MoveToBasket.ViewModel)
-    func removeFromBasket(viewModel: Items.RemoveFromBasket.ViewModel)
+    func update(viewModel: Items.Update.ViewModel)
 }
 
 extension ItemsView {
@@ -59,20 +58,21 @@ extension ItemsView {
         }
 
         func moveToBasket(_ item: ShoppingItem) {
-            let request = Items.MoveToBasket.Request(listId: list.id, itemId: item.id)
-            interactor?.moveToBasket(request: request)
-        }
-
-        func moveToBasket(viewModel: Items.MoveToBasket.ViewModel) {
-            list = viewModel.list
+            let request = Items.Update.Request(listId: list.id, item: item.withState(.inBasket))
+            interactor?.update(request: request)
         }
 
         func removeFromBasket(_ item: ShoppingItem) {
-            let request = Items.RemoveFromBasket.Request(listId: list.id, itemId: item.id)
-            interactor?.removeFromBasket(request: request)
+            let request = Items.Update.Request(listId: list.id, item: item.withState(.toBuy))
+            interactor?.update(request: request)
         }
 
-        func removeFromBasket(viewModel: Items.RemoveFromBasket.ViewModel) {
+        func update(itemName: String, inItem item: ShoppingItem) {
+            let request = Items.Update.Request(listId: list.id, item: item.withName(itemName))
+            interactor?.update(request: request)
+        }
+
+        func update(viewModel: Items.Update.ViewModel) {
             list = viewModel.list
         }
     }

@@ -1,3 +1,5 @@
+import Combine
+
 protocol ListsBusinessLogic {
     func delete(request: Lists.Delete.Request)
     func fetch(request: Lists.Fetch.Request)
@@ -9,13 +11,21 @@ final class ListsInteractor: ListsBusinessLogic {
     private let repository: MainRepository
     private let remoteChangesListener: RemoteModelChangesListener
 
+    private var remoteModelChangesCancallable: AnyCancellable?
+
     init(
         repository: MainRepository,
         remoteChangesListener: RemoteModelChangesListener
     ) {
         self.repository = repository
         self.remoteChangesListener = remoteChangesListener
-        self.remoteChangesListener.delegate = self
+
+        self.remoteModelChangesCancallable = remoteChangesListener
+            .publisher
+            .sink { [weak self] list in
+                let request = Lists.Fetch.Request(variant: .all)
+                self?.fetch(request: request)
+            }
     }
 
     func delete(request: Lists.Delete.Request) {
@@ -40,12 +50,5 @@ final class ListsInteractor: ListsBusinessLogic {
             }
             sendResponse([list])
         }
-    }
-}
-
-extension ListsInteractor: RemoteModelChangesListenerDelegate {
-    func shoppingListsDidChangeFromRemote(_ listener: RemoteModelChangesListener) {
-        let request = Lists.Fetch.Request(variant: .all)
-        fetch(request: request)
     }
 }

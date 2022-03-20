@@ -42,7 +42,7 @@ extension ItemsView {
                 return .primary
             }
 
-            return Color.primary.opacity(0.1)
+            return .primary.opacity(0.1)
         }
     }
 

@@ -4,8 +4,7 @@ protocol ItemsBusinessLogic {
     func add(request: Items.Add.Request)
     func delete(request: Items.Delete.Request)
     func fetch(request: Items.Fetch.Request)
-    func moveToBasket(request: Items.MoveToBasket.Request)
-    func removeFromBasket(request: Items.RemoveFromBasket.Request)
+    func update(request: Items.Update.Request)
 }
 
 final class ItemsInteractor: ItemsBusinessLogic {
@@ -65,25 +64,14 @@ final class ItemsInteractor: ItemsBusinessLogic {
         presenter?.fetch(response: response)
     }
 
-    func moveToBasket(request: Items.MoveToBasket.Request) {
-        repository.changeStateOfItem(withId: request.itemId, to: .inBasket)
+    func update(request: Items.Update.Request) {
+        repository.updateItem(request.item)
 
         guard let list = repository.list(withId: request.listId) else {
             return
         }
 
-        let response = Items.MoveToBasket.Response(list: list)
-        presenter?.moveToBasket(response: response)
-    }
-
-    func removeFromBasket(request: Items.RemoveFromBasket.Request) {
-        repository.changeStateOfItem(withId: request.itemId, to: .toBuy)
-
-        guard let list = repository.list(withId: request.listId) else {
-            return
-        }
-
-        let response = Items.RemoveFromBasket.Response(list: list)
-        presenter?.removeFromBasket(response: response)
+        let response = Items.Update.Response(list: list)
+        presenter?.update(response: response)
     }
 }

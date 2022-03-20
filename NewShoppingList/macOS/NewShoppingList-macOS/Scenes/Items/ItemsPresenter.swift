@@ -2,8 +2,7 @@ protocol ItemsPresentationLogic {
     func add(response: Items.Add.Response)
     func delete(response: Items.Delete.Response)
     func fetch(response: Items.Fetch.Response)
-    func moveToBasket(response: Items.MoveToBasket.Response)
-    func removeFromBasket(response: Items.RemoveFromBasket.Response)
+    func update(response: Items.Update.Response)
 }
 
 final class ItemsPresenter: ItemsPresentationLogic {
@@ -24,13 +23,8 @@ final class ItemsPresenter: ItemsPresentationLogic {
         viewController?.fetch(viewModel: viewModel)
     }
 
-    func moveToBasket(response: Items.MoveToBasket.Response) {
-        let viewModel = Items.MoveToBasket.ViewModel(list: response.list)
-        viewController?.moveToBasket(viewModel: viewModel)
-    }
-
-    func removeFromBasket(response: Items.RemoveFromBasket.Response) {
-        let viewModel = Items.RemoveFromBasket.ViewModel(list: response.list)
-        viewController?.removeFromBasket(viewModel: viewModel)
+    func update(response: Items.Update.Response) {
+        let viewModel = Items.Update.ViewModel(list: response.list)
+        viewController?.update(viewModel: viewModel)
     }
 }

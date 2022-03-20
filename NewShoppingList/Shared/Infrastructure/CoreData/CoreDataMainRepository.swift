@@ -5,6 +5,7 @@ final class CoreDataMainRepository: NSObject, MainRepository {
     private let container: NSPersistentCloudKitContainer
     private let context: NSManagedObjectContext
     private let listController: NSFetchedResultsController<ShoppingListEntity>
+    private let itemsController: NSFetchedResultsController<ShoppingItemEntity>
 
     override init() {
         container = NSPersistentCloudKitContainer(name: "Main")
@@ -24,9 +25,19 @@ final class CoreDataMainRepository: NSObject, MainRepository {
             cacheName: nil
         )
 
+        itemsController = NSFetchedResultsController(
+            fetchRequest: ShoppingItemEntity.fetchAllRequest(),
+            managedObjectContext: context,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+
+        try? itemsController.performFetch()
+
         super.init()
 
         listController.delegate = self
+        itemsController.delegate = self
     }
 
     func allLists() -> [ShoppingList] {
@@ -40,17 +51,13 @@ final class CoreDataMainRepository: NSObject, MainRepository {
     }
 
     func list(withId listId: Id<ShoppingList>) -> ShoppingList? {
-        let request: NSFetchRequest<ShoppingListEntity> = ShoppingListEntity.fetchRequest()
-        request.predicate = .init(format: "id == %@", listId.toUuid() as CVarArg)
+        try? listController.performFetch()
 
-        let entities = try? context.fetch(request)
-        let lists = entities?.map { $0.toShoppingList() }
+        let entity = listController
+            .fetchedObjects?
+            .first { $0.id == listId.toUuid() }
 
-        guard lists?.count == 1 else {
-            return nil
-        }
-
-        return lists?.first
+        return entity?.toShoppingList()
     }
 
     func addList(withName listName: String) {
@@ -62,16 +69,13 @@ final class CoreDataMainRepository: NSObject, MainRepository {
     }
 
     func deleteList(withId listId: Id<ShoppingList>) {
-        let request: NSFetchRequest<ShoppingListEntity> = ShoppingListEntity.fetchRequest()
-        request.predicate = .init(format: "id == %@", listId.toUuid() as CVarArg)
+        try? listController.performFetch()
 
-        guard let entities = try? context.fetch(request) else {
-            assertionFailure("Unable to execute request.")
-            return
-        }
+        let entity = listController
+            .fetchedObjects?
+            .first { $0.id == listId.toUuid() }
 
-        guard let entity = entities.first else {
-            assertionFailure("Unable to find entity to delete.")
+        guard let entity = entity else {
             return
         }
 
@@ -101,16 +105,13 @@ final class CoreDataMainRepository: NSObject, MainRepository {
     }
 
     func deleteItem(withId itemId: Id<ShoppingItem>) {
-        let request: NSFetchRequest<ShoppingItemEntity> = ShoppingItemEntity.fetchRequest()
-        request.predicate = .init(format: "id == %@", itemId.toUuid() as CVarArg)
+        try? itemsController.performFetch()
 
-        guard let entities = try? context.fetch(request) else {
-            assertionFailure("Unable to execute request.")
-            return
+        let entity = itemsController.fetchedObjects?.first {
+            $0.id == itemId.toUuid()
         }
 
-        guard let entity = entities.first else {
-            assertionFailure("Unable to find entity to delete.")
+        guard let entity = entity else {
             return
         }
 
@@ -119,16 +120,13 @@ final class CoreDataMainRepository: NSObject, MainRepository {
     }
 
     func updateItem(_ item: ShoppingItem) {
-        let request: NSFetchRequest<ShoppingItemEntity> = ShoppingItemEntity.fetchRequest()
-        request.predicate = .init(format: "id == %@", item.id.toUuid() as CVarArg)
+        try? itemsController.performFetch()
 
-        guard let entities = try? context.fetch(request) else {
-            assertionFailure("Unable to execute request.")
-            return
+        let entity = itemsController.fetchedObjects?.first {
+            $0.id == item.id.toUuid()
         }
 
-        guard let entity = entities.first else {
-            assertionFailure("Unable to find entity to delete.")
+        guard let entity = entity else {
             return
         }
 
@@ -146,9 +144,11 @@ extension CoreDataMainRepository: NSFetchedResultsControllerDelegate {
         for type: NSFetchedResultsChangeType,
         newIndexPath: IndexPath?
     ) {
-        guard let listEntity = anObject as? ShoppingListEntity else {
-            return
-        }
+        let listEntity =
+            (anObject as? ShoppingListEntity) ??
+            (anObject as? ShoppingItemEntity)?.shoppingList
+
+        guard let listEntity = listEntity else { return }
 
         let notificationName = Notification.Name(rawValue: "ShoppingListEntityHaveChanged")
         NotificationCenter.default.post(name: notificationName, object: listEntity.toShoppingList())

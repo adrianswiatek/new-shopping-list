@@ -22,7 +22,7 @@ final class ListsInteractor: ListsBusinessLogic {
 
         self.remoteModelChangesCancallable = remoteChangesListener
             .publisher
-            .sink { [weak self] list in
+            .sink { [weak self] _ in
                 let request = Lists.Fetch.Request(variant: .all)
                 self?.fetch(request: request)
             }

@@ -9,8 +9,17 @@ class ShoppingItemEntity: NSManagedObject, Identifiable {
     @NSManaged var shoppingList: ShoppingListEntity
 
     @nonobjc
-    class func fetchRequest() -> NSFetchRequest<ShoppingItemEntity> {
+    static func fetchRequest() -> NSFetchRequest<ShoppingItemEntity> {
         NSFetchRequest<ShoppingItemEntity>(entityName: "ShoppingItemEntity")
+    }
+
+    @nonobjc
+    static func fetchAllRequest() -> NSFetchRequest<ShoppingItemEntity> {
+        let fetchRequest = ShoppingItemEntity.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \ShoppingItemEntity.name, ascending: true)
+        ]
+        return fetchRequest
     }
 }
 

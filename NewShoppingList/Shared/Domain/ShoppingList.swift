@@ -26,6 +26,10 @@ struct ShoppingList: Identifiable {
     func numberOfItems(_ state: ShoppingItem.State? = nil) -> Int {
         items(state).count
     }
+
+    func hasItems(_ state: ShoppingItem.State? = nil) -> Bool {
+        !items(state).isEmpty
+    }
 }
 
 extension ShoppingList {

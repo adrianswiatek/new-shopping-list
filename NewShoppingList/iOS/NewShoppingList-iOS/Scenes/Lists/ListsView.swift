@@ -15,7 +15,7 @@ struct ListsView: View {
         NavigationView {
             List {
                 ForEach(controller.lists) { list in
-                    Label(list.name, systemImage: "chevron.right")
+                    NavigationLink(list.name, destination: configurator.itemsView(list: list))
                 }
                 .onDelete {
                     controller.delete($0)

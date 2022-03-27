@@ -12,13 +12,20 @@ extension ItemsView {
         var body: some View {
             Group {
                 if controller.hasItemsInBasket {
-                    List(controller.itemsInBasket) { item in
-                        Button {
-                            withAnimation {
-                                controller.removeFromBasket(item)
+                    List {
+                        ForEach(controller.itemsInBasket) { item in
+                            Button {
+                                withAnimation {
+                                    controller.removeFromBasket(item)
+                                }
+                            } label: {
+                                Text(item.name)
                             }
-                        } label: {
-                            Text(item.name)
+                            .inBasketContextMenu(item: item, controller: controller)
+                        }
+                        .onDelete(perform: controller.deleteAtIndexSet)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            EmptyView()
                         }
                     }
                     .listStyle(.plain)

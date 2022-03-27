@@ -7,23 +7,30 @@ struct ItemsView: View {
     @State
     private var selectedTab: String
 
-    init(controller: Controller) {
+    private let configurator: Configurator
+
+    init(controller: Controller, configurator: Configurator) {
         self._controller = StateObject(wrappedValue: controller)
-        self._selectedTab = State(wrappedValue: Message.toBuy)
+        self.configurator = configurator
+
+        self._selectedTab = State(wrappedValue: TabName.toBuy)
     }
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            ToBuy(controller: controller)
+            ToBuy(controller: controller, configurator: configurator)
                 .tabItem {
                     Label(Message.toBuy, systemImage: Icon.toBuy)
                 }
-                .tag(Message.toBuy)
+                .tag(TabName.toBuy)
+                .badge(controller.numberOfItemsToBuy)
+
             InBasket(controller: controller)
                 .tabItem {
                     Label(Message.inBasket, systemImage: Icon.inBasket)
                 }
-                .tag(Message.inBasket)
+                .tag(TabName.inBasket)
+                .badge(controller.numberOfItemsInBasket)
         }
         .navigationTitle(controller.listName)
         .navigationBarTitleDisplayMode(.inline)

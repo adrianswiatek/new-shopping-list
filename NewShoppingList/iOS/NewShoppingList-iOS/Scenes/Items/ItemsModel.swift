@@ -1,22 +1,18 @@
 enum Items {
+    enum Add {
+        struct Request {
+            let name: String
+        }
+    }
+
     enum Delete {
         struct Request {
             let item: ShoppingItem
         }
-
-        struct Response {
-
-        }
-
-        struct ViewModel {
-            
-        }
     }
 
     enum Fetch {
-        struct Request {
-
-        }
+        struct Request {}
 
         struct Response {
             let list: ShoppingList
@@ -32,14 +28,6 @@ enum Items {
     enum Update {
         struct Request {
             let item: ShoppingItem
-        }
-
-        struct Response {
-
-        }
-
-        struct ViewModel {
-
         }
     }
 }

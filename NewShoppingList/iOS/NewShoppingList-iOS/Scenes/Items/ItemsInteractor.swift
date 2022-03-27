@@ -1,6 +1,7 @@
 import Combine
 
 protocol ItemsBusinessLogic {
+    func add(request: Items.Add.Request)
     func delete(request: Items.Delete.Request)
     func fetch(request: Items.Fetch.Request)
     func update(request: Items.Update.Request)
@@ -12,7 +13,7 @@ protocol ItemsDataStore {
 
 final class ItemsInteractor: ItemsBusinessLogic, ItemsDataStore {
     var presenter: ItemsPresentationLogic?
-    var listId: Id<ShoppingList>
+    let listId: Id<ShoppingList>
 
     private let repository: MainRepository
     private let remoteChangesListener: RemoteModelChangesListener
@@ -36,6 +37,10 @@ final class ItemsInteractor: ItemsBusinessLogic, ItemsDataStore {
             }
     }
 
+    func add(request: Items.Add.Request) {
+        repository.addItem(withName: request.name, toListWithId: listId)
+    }
+
     func delete(request: Items.Delete.Request) {
         repository.deleteItem(withId: request.item.id)
     }
@@ -51,8 +56,5 @@ final class ItemsInteractor: ItemsBusinessLogic, ItemsDataStore {
 
     func update(request: Items.Update.Request) {
         repository.updateItem(request.item)
-
-        let response = Items.Update.Response()
-        presenter?.update(response: response)
     }
 }

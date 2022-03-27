@@ -2,9 +2,7 @@ import Combine
 import Foundation
 
 protocol ItemsDisplayLogic: AnyObject {
-    func delete(viewModel: Items.Delete.ViewModel)
     func fetch(viewModel: Items.Fetch.ViewModel)
-    func update(viewModel: Items.Update.ViewModel)
 }
 
 extension ItemsView {
@@ -23,6 +21,14 @@ extension ItemsView {
         @Published
         private(set) var basketIcon: String
 
+        var numberOfItemsToBuy: Int {
+            itemsToBuy.count
+        }
+
+        var numberOfItemsInBasket: Int {
+            itemsInBasket.count
+        }
+
         var hasItemsToBuy: Bool {
             !itemsToBuy.isEmpty
         }
@@ -38,7 +44,12 @@ extension ItemsView {
             self.basketIcon = Icon.toBuy
         }
 
-        func delete(indexSet: IndexSet) {
+        func addItem(withName itemName: String) {
+            let request = Items.Add.Request(name: itemName)
+            interactor?.add(request: request)
+        }
+
+        func deleteAtIndexSet(_ indexSet: IndexSet) {
             let item = indexSet.first.map { itemsToBuy[$0] }
             guard let item = item else {
                  return
@@ -47,8 +58,9 @@ extension ItemsView {
             interactor?.delete(request: request)
         }
 
-        func delete(viewModel: Items.Delete.ViewModel) {
-
+        func deleteItem(_ item: ShoppingItem) {
+            let request = Items.Delete.Request(item: item)
+            interactor?.delete(request: request)
         }
 
         func fetch() {
@@ -70,10 +82,6 @@ extension ItemsView {
         func removeFromBasket(_ item: ShoppingItem) {
             let request = Items.Update.Request(item: item.withState(.toBuy))
             interactor?.update(request: request)
-        }
-
-        func update(viewModel: Items.Update.ViewModel) {
-
         }
     }
 }

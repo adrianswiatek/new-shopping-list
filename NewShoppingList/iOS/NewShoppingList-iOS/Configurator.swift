@@ -51,6 +51,20 @@ final class Configurator {
         presenter.viewController = controller
         controller.interactor = interactor
 
-        return ItemsView(controller: controller)
+        return ItemsView(controller: controller, configurator: self)
+    }
+
+    func editItemView(item: ShoppingItem) -> some View {
+        let interactor = AddListInteractor(
+            repository: mainRepository
+        )
+        let presenter = AddListPresenter()
+        let controller = AddListView.Controller()
+
+        interactor.presenter = presenter
+        presenter.viewController = controller
+        controller.interactor = interactor
+
+        return AddListView(controller: controller)
     }
 }

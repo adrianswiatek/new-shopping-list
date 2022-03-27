@@ -6,31 +6,21 @@ extension ItemsView {
         private var controller: Controller
 
         @State
-        private var quickAdd: String
+        private var selectedMode: Int
 
-        init(controller: Controller) {
+        private let configurator: Configurator
+
+        init(controller: Controller, configurator: Configurator) {
             self._controller = ObservedObject(wrappedValue: controller)
-            self._quickAdd = State(wrappedValue: "")
+            self.configurator = configurator
+
+            self._selectedMode = State(wrappedValue: 0)
         }
 
         var body: some View {
             VStack {
-                HStack {
-                    TextField("Quick add", text: $quickAdd)
-
-                    Button {
-
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .disabled(quickAdd.isEmpty)
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.primary.opacity(0.05))
-                )
+                QuickAdd(controller: controller)
+                    .padding(.horizontal, 8)
 
                 if controller.hasItemsToBuy {
                     List {
@@ -42,8 +32,9 @@ extension ItemsView {
                             } label: {
                                 Text(item.name)
                             }
+                            .toBuyContextMenu(item: item, controller: controller, configurator: configurator)
                         }
-                        .onDelete(perform: controller.delete)
+                        .onDelete(perform: controller.deleteAtIndexSet)
                     }
                     .listStyle(.plain)
                 } else {

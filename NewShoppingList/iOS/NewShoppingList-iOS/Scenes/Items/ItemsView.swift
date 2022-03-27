@@ -4,23 +4,29 @@ struct ItemsView: View {
     @StateObject
     private var controller: Controller
 
+    @State
+    private var selectedTab: String
+
     init(controller: Controller) {
         self._controller = StateObject(wrappedValue: controller)
+        self._selectedTab = State(wrappedValue: Message.toBuy)
     }
 
     var body: some View {
-        List(controller.itemsToBuy) { item in
-            Text(item.name)
+        TabView(selection: $selectedTab) {
+            ToBuy(controller: controller)
+                .tabItem {
+                    Label(Message.toBuy, systemImage: Icon.toBuy)
+                }
+                .tag(Message.toBuy)
+            InBasket(controller: controller)
+                .tabItem {
+                    Label(Message.inBasket, systemImage: Icon.inBasket)
+                }
+                .tag(Message.inBasket)
         }
-        .listStyle(.plain)
         .navigationTitle(controller.listName)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(
-            trailing: Button {
-
-            } label: {
-                Image(systemName: controller.basketIcon)
-            })
         .onAppear(perform: controller.fetch)
     }
 }

@@ -45,7 +45,7 @@ final class Configurator {
             remoteChangesListener: remoteModelChangesListener
         )
         let presenter = ItemsPresenter()
-        let controller = ItemsView.Controller(listName: list.name)
+        let controller = ItemsView.Controller(initialListName: list.name)
 
         interactor.presenter = presenter
         presenter.viewController = controller

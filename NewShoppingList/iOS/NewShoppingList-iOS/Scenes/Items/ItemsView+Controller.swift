@@ -1,7 +1,10 @@
 import Combine
+import Foundation
 
 protocol ItemsDisplayLogic: AnyObject {
+    func delete(viewModel: Items.Delete.ViewModel)
     func fetch(viewModel: Items.Fetch.ViewModel)
+    func update(viewModel: Items.Update.ViewModel)
 }
 
 extension ItemsView {
@@ -15,16 +18,37 @@ extension ItemsView {
         private(set) var itemsInBasket: [ShoppingItem]
 
         @Published
-        var listName: String
+        private(set) var listName: String
 
         @Published
-        var basketIcon: String
+        private(set) var basketIcon: String
 
-        init(listName: String) {
+        var hasItemsToBuy: Bool {
+            !itemsToBuy.isEmpty
+        }
+
+        var hasItemsInBasket: Bool {
+            !itemsInBasket.isEmpty
+        }
+
+        init(initialListName: String) {
             self.itemsToBuy = []
             self.itemsInBasket = []
-            self.listName = listName
-            self.basketIcon = ""
+            self.listName = initialListName
+            self.basketIcon = Icon.toBuy
+        }
+
+        func delete(indexSet: IndexSet) {
+            let item = indexSet.first.map { itemsToBuy[$0] }
+            guard let item = item else {
+                 return
+            }
+            let request = Items.Delete.Request(item: item)
+            interactor?.delete(request: request)
+        }
+
+        func delete(viewModel: Items.Delete.ViewModel) {
+
         }
 
         func fetch() {
@@ -34,13 +58,22 @@ extension ItemsView {
 
         func fetch(viewModel: Items.Fetch.ViewModel) {
             listName = viewModel.listName
-            basketIcon = determineBasketIcon(hasItemsInBasket: viewModel.hasItemsInBasket)
             itemsToBuy = viewModel.itemsToBuy
             itemsInBasket = viewModel.itemsInBasket
         }
 
-        private func determineBasketIcon(hasItemsInBasket: Bool) -> String {
-            hasItemsInBasket ? "cart.fill" : "cart"
+        func moveToBasket(_ item: ShoppingItem) {
+            let request = Items.Update.Request(item: item.withState(.inBasket))
+            interactor?.update(request: request)
+        }
+
+        func removeFromBasket(_ item: ShoppingItem) {
+            let request = Items.Update.Request(item: item.withState(.toBuy))
+            interactor?.update(request: request)
+        }
+
+        func update(viewModel: Items.Update.ViewModel) {
+
         }
     }
 }

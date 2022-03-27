@@ -1,4 +1,18 @@
 enum Items {
+    enum Delete {
+        struct Request {
+            let item: ShoppingItem
+        }
+
+        struct Response {
+
+        }
+
+        struct ViewModel {
+            
+        }
+    }
+
     enum Fetch {
         struct Request {
 
@@ -10,9 +24,22 @@ enum Items {
 
         struct ViewModel {
             let listName: String
-            let hasItemsInBasket: Bool
             let itemsToBuy: [ShoppingItem]
             let itemsInBasket: [ShoppingItem]
+        }
+    }
+
+    enum Update {
+        struct Request {
+            let item: ShoppingItem
+        }
+
+        struct Response {
+
+        }
+
+        struct ViewModel {
+
         }
     }
 }

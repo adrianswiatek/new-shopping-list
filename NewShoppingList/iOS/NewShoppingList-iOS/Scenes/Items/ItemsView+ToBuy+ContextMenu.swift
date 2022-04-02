@@ -50,7 +50,7 @@ extension ItemsView {
                 }
             }
             .popover(isPresented: $isEditItemVisible) {
-                configurator.addItemView()
+                configurator.editItemView(item: item)
             }
         }
     }

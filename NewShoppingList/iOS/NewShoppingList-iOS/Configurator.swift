@@ -55,16 +55,16 @@ final class Configurator {
     }
 
     func editItemView(item: ShoppingItem) -> some View {
-        let interactor = AddListInteractor(
+        let interactor = EditItemInteractor(
             repository: mainRepository
         )
-        let presenter = AddListPresenter()
-        let controller = AddListView.Controller()
+        let presenter = EditItemPresenter()
+        let controller = EditItemView.Controller(item: item)
 
         interactor.presenter = presenter
         presenter.viewController = controller
         controller.interactor = interactor
 
-        return AddListView(controller: controller)
+        return EditItemView(controller: controller)
     }
 }

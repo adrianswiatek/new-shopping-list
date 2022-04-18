@@ -14,18 +14,11 @@ extension ItemsView {
                 if controller.hasItemsInBasket {
                     List {
                         ForEach(controller.itemsInBasket) { item in
-                            Button {
-                                withAnimation {
-                                    controller.removeFromBasket(item)
+                            Text(item.name)
+                                .inBasketContextMenu(item: item, controller: controller)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    removeItemFromBasketButton(item)
                                 }
-                            } label: {
-                                Text(item.name)
-                            }
-                            .inBasketContextMenu(item: item, controller: controller)
-                        }
-                        .onDelete(perform: controller.deleteAtIndexSet)
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            EmptyView()
                         }
                     }
                     .listStyle(.plain)
@@ -34,6 +27,17 @@ extension ItemsView {
                         .foregroundColor(.secondary)
                 }
             }
+        }
+
+        private func removeItemFromBasketButton(_ item: ShoppingItem) -> some View {
+            Button {
+                withAnimation {
+                    controller.removeFromBasket(item)
+                }
+            } label: {
+                Image(systemName: Icon.removeFromBasket)
+            }
+            .tint(.orange)
         }
     }
 }

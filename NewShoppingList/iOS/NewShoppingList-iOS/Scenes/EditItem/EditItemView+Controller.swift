@@ -14,8 +14,15 @@ extension EditItemView {
         @Published
         var itemName: String
 
+        @Published
+        var itemDetails: String
+
         var canSaveItem: Bool {
-            isNameChanged() && isNameProvided()
+            (isNameChanged() || isDetailsChanged()) && isNameProvided()
+        }
+
+        var hasDetails: Bool {
+            true
         }
 
         private let originalItem: ShoppingItem
@@ -23,10 +30,11 @@ extension EditItemView {
         init(item: ShoppingItem) {
             self.originalItem = item
             self.itemName = item.name
+            self.itemDetails = item.details
         }
 
         func save() {
-            let updatedItem = originalItem.withName(itemName)
+            let updatedItem = originalItem.withName(itemName).withDetails(itemDetails)
             let request = EditItem.SaveItem.Request(item: updatedItem)
             interactor?.saveItem(request: request)
         }
@@ -37,6 +45,10 @@ extension EditItemView {
 
         private func isNameChanged() -> Bool {
             itemName.trimmingCharacters(in: .whitespaces) != originalItem.name
+        }
+
+        private func isDetailsChanged() -> Bool {
+            itemDetails.trimmingCharacters(in: .whitespaces) != originalItem.details
         }
 
         private func isNameProvided() -> Bool {

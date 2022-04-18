@@ -131,6 +131,7 @@ final class CoreDataMainRepository: NSObject, MainRepository {
         }
 
         entity.name = item.name
+        entity.details = item.details
         entity.state = item.state.toInt()
         context.saveChanges()
     }

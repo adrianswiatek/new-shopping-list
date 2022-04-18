@@ -1,8 +1,10 @@
 extension ItemsView {
     enum Icon {
-        static let delete: String = "x.circle.fill"
+        static let checkmark: String = "checkmark"
+        static let delete: String = "trash.fill"
         static let edit: String = "pencil"
         static let inBasket: String = "cart.circle"
+        static let info: String = "info.circle"
         static let moveToBasket: String = "cart.fill.badge.plus"
         static let quickAdd: String = "doc.badge.plus"
         static let removeFromBasket: String = "cart.fill.badge.minus"

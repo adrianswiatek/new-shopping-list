@@ -5,6 +5,7 @@ import CoreData
 class ShoppingItemEntity: NSManagedObject, Identifiable {
     @NSManaged var id: UUID
     @NSManaged var name: String
+    @NSManaged var details: String
     @NSManaged var state: Int
     @NSManaged var shoppingList: ShoppingListEntity
 
@@ -28,6 +29,7 @@ extension ShoppingItemEntity {
         ShoppingItem.Factory.new(
             id: .fromUUid(id),
             name: name,
+            details: details,
             state: .fromInt(state)
         )
     }
@@ -40,6 +42,7 @@ extension ShoppingItemEntity {
         let entity = ShoppingItemEntity(context: context)
         entity.id = shoppingItem.id.toUuid()
         entity.name = shoppingItem.name
+         entity.details = shoppingItem.details
         entity.state = shoppingItem.state.toInt()
         entity.shoppingList = shoppingListEntity
         return entity

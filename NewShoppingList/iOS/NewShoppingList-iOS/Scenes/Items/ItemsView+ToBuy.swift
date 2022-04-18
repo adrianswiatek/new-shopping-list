@@ -8,6 +8,9 @@ extension ItemsView {
         @State
         private var selectedMode: Int
 
+        @State
+        private var itemToEdit: ShoppingItem?
+
         private let configurator: Configurator
 
         init(controller: Controller, configurator: Configurator) {
@@ -25,16 +28,15 @@ extension ItemsView {
                 if controller.hasItemsToBuy {
                     List {
                         ForEach(controller.itemsToBuy) { item in
-                            Button {
-                                withAnimation {
-                                    controller.moveToBasket(item)
+                            cellButton(forItem: item)
+                                .toBuyContextMenu(item: item, controller: controller, configurator: configurator)
+                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                    moveItemToBasketButton(item)
                                 }
-                            } label: {
-                                Text(item.name)
-                            }
-                            .toBuyContextMenu(item: item, controller: controller, configurator: configurator)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    deleteItemButton(item)
+                                }
                         }
-                        .onDelete(perform: controller.deleteAtIndexSet)
                     }
                     .listStyle(.plain)
                 } else {
@@ -44,6 +46,49 @@ extension ItemsView {
                     Spacer()
                 }
             }
+            .popover(item: $itemToEdit) { item in
+                configurator.editItemView(item: item)
+            }
+        }
+
+        private func cellButton(forItem item: ShoppingItem) -> some View {
+            Button {
+                withAnimation {
+                    itemToEdit = item
+                }
+            } label: {
+                HStack {
+                    Text(item.name)
+
+                    if item.hasDetails {
+                        Spacer()
+                        Image(systemName: Icon.info)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
+
+        private func moveItemToBasketButton(_ item: ShoppingItem) -> some View {
+            Button {
+                withAnimation {
+                    controller.moveToBasket(item)
+                }
+            } label: {
+                Image(systemName: Icon.moveToBasket)
+            }
+            .tint(Color.blue)
+        }
+
+        private func deleteItemButton(_ item: ShoppingItem) -> some View {
+            Button {
+                withAnimation {
+                    controller.deleteItem(item)
+                }
+            } label: {
+                Image(systemName: Icon.delete)
+            }
+            .tint(Color.red)
         }
     }
 }

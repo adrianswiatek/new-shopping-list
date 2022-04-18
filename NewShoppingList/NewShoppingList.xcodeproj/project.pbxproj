@@ -26,11 +26,8 @@
 		A729863927C161B30074CD74 /* NewShoppingList_macOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729863827C161B30074CD74 /* NewShoppingList_macOSUITests.swift */; };
 		A729863B27C161B30074CD74 /* NewShoppingList_macOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729863A27C161B30074CD74 /* NewShoppingList_macOSUITestsLaunchTests.swift */; };
 		A729864D27C1622A0074CD74 /* NewShoppingList_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */; };
-		A729864F27C1622A0074CD74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729864E27C1622A0074CD74 /* ContentView.swift */; };
 		A729865127C1622B0074CD74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A729865027C1622B0074CD74 /* Assets.xcassets */; };
 		A729865427C1622B0074CD74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A729865327C1622B0074CD74 /* Preview Assets.xcassets */; };
-		A729865627C1622B0074CD74 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729865527C1622B0074CD74 /* Persistence.swift */; };
-		A729865927C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A729865727C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld */; };
 		A729866327C1622B0074CD74 /* NewShoppingList_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866227C1622B0074CD74 /* NewShoppingList_iOSTests.swift */; };
 		A729866D27C1622C0074CD74 /* NewShoppingList_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866C27C1622C0074CD74 /* NewShoppingList_iOSUITests.swift */; };
 		A729866F27C1622C0074CD74 /* NewShoppingList_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A729866E27C1622C0074CD74 /* NewShoppingList_iOSUITestsLaunchTests.swift */; };
@@ -232,11 +229,8 @@
 		A729863A27C161B30074CD74 /* NewShoppingList_macOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_macOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A729864A27C1622A0074CD74 /* NewShoppingList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewShoppingList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_iOSApp.swift; sourceTree = "<group>"; };
-		A729864E27C1622A0074CD74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A729865027C1622B0074CD74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A729865327C1622B0074CD74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A729865527C1622B0074CD74 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		A729865827C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewShoppingList_iOS.xcdatamodel; sourceTree = "<group>"; };
 		A729865E27C1622B0074CD74 /* NewShoppingList-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A729866227C1622B0074CD74 /* NewShoppingList_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShoppingList_iOSTests.swift; sourceTree = "<group>"; };
 		A729866827C1622C0074CD74 /* NewShoppingList-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NewShoppingList-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -537,11 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				E89AD82727CAEC4200821775 /* Configurator.swift */,
-				A729864E27C1622A0074CD74 /* ContentView.swift */,
 				A729864C27C1622A0074CD74 /* NewShoppingList_iOSApp.swift */,
-				A729865527C1622B0074CD74 /* Persistence.swift */,
 				A729865027C1622B0074CD74 /* Assets.xcassets */,
-				A729865727C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld */,
 				A729865227C1622B0074CD74 /* Preview Content */,
 				A79E1BDE27C42FE0005A5EA1 /* Scenes */,
 			);
@@ -1205,7 +1196,6 @@
 				E89AD82827CAEC4200821775 /* Configurator.swift in Sources */,
 				E83ED0AF27EFB88C00E9BDD0 /* ItemsView.swift in Sources */,
 				E8EDBE3027F8F08200D05E1B /* EditItemView.swift in Sources */,
-				A729865927C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld in Sources */,
 				E89AD82227CADE3B00821775 /* AddListPresenter.swift in Sources */,
 				A79E1BED27C43084005A5EA1 /* ListsModel.swift in Sources */,
 				A79E1BE827C43066005A5EA1 /* ListsView+Controller.swift in Sources */,
@@ -1213,10 +1203,8 @@
 				A79E1BE227C43049005A5EA1 /* ListsView.swift in Sources */,
 				E8EDBE3327F8F09F00D05E1B /* EditItemView+Controller.swift in Sources */,
 				E8061CAC27DE832E00178188 /* ShoppingItemEntity.swift in Sources */,
-				A729865627C1622B0074CD74 /* Persistence.swift in Sources */,
 				E8E6CDBA27F0B2AD00ECC471 /* ItemsView+ToBuy+QuickAdd.swift in Sources */,
 				A701EAC627C57F1300705208 /* NSManagedObjectExtensions.swift in Sources */,
-				A729864F27C1622A0074CD74 /* ContentView.swift in Sources */,
 				A701EAD227C584F600705208 /* CoreDataMainRepository.swift in Sources */,
 				E830483F27E7ACDB004D6B90 /* ItemsPresenter.swift in Sources */,
 				E89AD82427CADE4400821775 /* AddListView+Controller.swift in Sources */,
@@ -3007,16 +2995,6 @@
 			);
 			currentVersion = A729862327C161B30074CD74 /* NewShoppingList_macOS.xcdatamodel */;
 			path = NewShoppingList_macOS.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		A729865727C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A729865827C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodel */,
-			);
-			currentVersion = A729865827C1622B0074CD74 /* NewShoppingList_iOS.xcdatamodel */;
-			path = NewShoppingList_iOS.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

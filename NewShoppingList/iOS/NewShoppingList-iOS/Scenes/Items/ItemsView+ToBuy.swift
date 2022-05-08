@@ -31,7 +31,7 @@ extension ItemsView {
                             cellButton(forItem: item)
                                 .toBuyContextMenu(item: item, controller: controller, configurator: configurator)
                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                    moveItemToBasketButton(item)
+                                    editItemButton(item)
                                 }
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     deleteItemButton(item)
@@ -39,6 +39,9 @@ extension ItemsView {
                         }
                     }
                     .listStyle(.plain)
+                    .refreshable {
+                        controller.fetch()
+                    }
                 } else {
                     Spacer()
                     Text(Message.noItemsToBuy)
@@ -54,14 +57,20 @@ extension ItemsView {
         private func cellButton(forItem item: ShoppingItem) -> some View {
             Button {
                 withAnimation {
-                    itemToEdit = item
+                    controller.moveToBasket(item)
                 }
             } label: {
                 HStack {
                     Text(item.name)
+                    
+                    Spacer()
+                    
+                    if item.hasCategory {
+                        Image(systemName: "tag")
+                            .foregroundColor(.secondary)
+                    }
 
                     if item.hasDetails {
-                        Spacer()
                         Image(systemName: Icon.info)
                             .foregroundColor(.secondary)
                     }
@@ -69,13 +78,13 @@ extension ItemsView {
             }
         }
 
-        private func moveItemToBasketButton(_ item: ShoppingItem) -> some View {
+        private func editItemButton(_ item: ShoppingItem) -> some View {
             Button {
                 withAnimation {
-                    controller.moveToBasket(item)
+                    itemToEdit = item
                 }
             } label: {
-                Image(systemName: Icon.moveToBasket)
+                Image(systemName: Icon.edit)
             }
             .tint(Color.blue)
         }

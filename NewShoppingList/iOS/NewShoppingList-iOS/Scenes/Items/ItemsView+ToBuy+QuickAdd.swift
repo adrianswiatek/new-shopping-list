@@ -27,7 +27,7 @@ extension ItemsView {
                     }
                     quickAddItemName = ""
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: Icon.add)
                 }
                 .disabled(quickAddItemName.isEmpty)
             }

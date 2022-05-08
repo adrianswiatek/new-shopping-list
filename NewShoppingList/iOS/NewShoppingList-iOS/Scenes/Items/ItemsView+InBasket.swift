@@ -14,30 +14,43 @@ extension ItemsView {
                 if controller.hasItemsInBasket {
                     List {
                         ForEach(controller.itemsInBasket) { item in
-                            Text(item.name)
+                            cellButtonForItem(item)
                                 .inBasketContextMenu(item: item, controller: controller)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                    removeItemFromBasketButton(item)
+                                    deleteItemButton(item)
                                 }
                         }
                     }
                     .listStyle(.plain)
+                    .refreshable {
+                        controller.fetch()
+                    }
                 } else {
                     Text(Message.noItemsInBasket)
                         .foregroundColor(.secondary)
                 }
             }
         }
-
-        private func removeItemFromBasketButton(_ item: ShoppingItem) -> some View {
+        
+        private func cellButtonForItem(_ item: ShoppingItem) -> some View {
             Button {
                 withAnimation {
                     controller.removeFromBasket(item)
                 }
             } label: {
-                Image(systemName: Icon.removeFromBasket)
+                Text(item.name)
             }
-            .tint(.orange)
+        }
+
+        private func deleteItemButton(_ item: ShoppingItem) -> some View {
+            Button {
+                withAnimation {
+                    controller.deleteItem(item)
+                }
+            } label: {
+                Image(systemName: Icon.delete)
+            }
+            .tint(Color.red)
         }
     }
 }

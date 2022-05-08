@@ -12,6 +12,10 @@ extension ListsView {
 
         @Published
         var lists: [ShoppingList]
+        
+        var presentationMode: PresentationMode {
+            lists.isEmpty ? .empty : .filled
+        }
 
         init() {
             self.lists = []
@@ -38,5 +42,9 @@ extension ListsView {
         func fetch(viewModel: Lists.Fetch.ViewModel) {
             lists = viewModel.lists
         }
+    }
+    
+    enum PresentationMode {
+        case filled, empty
     }
 }

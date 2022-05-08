@@ -1,5 +1,6 @@
 extension ItemsView {
     enum Icon {
+        static let add: String = "plus"
         static let checkmark: String = "checkmark"
         static let delete: String = "trash.fill"
         static let edit: String = "pencil"

@@ -16,9 +16,19 @@ extension EditItemView {
 
         @Published
         var itemDetails: String
+        
+        @Published
+        var itemCategory: String
+        
+        @Published
+        var categories: [String]
 
         var canSaveItem: Bool {
-            (isNameChanged() || isDetailsChanged()) && isNameProvided()
+            isNameProvided() && (
+                isNameChanged() ||
+                isDetailsChanged() ||
+                isCategoryChanged()
+            )
         }
 
         var hasDetails: Bool {
@@ -31,16 +41,26 @@ extension EditItemView {
             self.originalItem = item
             self.itemName = item.name
             self.itemDetails = item.details
+            self.itemCategory = item.category
+            self.categories = []
         }
 
         func save() {
-            let updatedItem = originalItem.withName(itemName).withDetails(itemDetails)
+            let updatedItem = originalItem
+                .withName(itemName)
+                .withDetails(itemDetails)
+                .withCategory(itemCategory)
+
             let request = EditItem.SaveItem.Request(item: updatedItem)
             interactor?.saveItem(request: request)
         }
 
         func saveItem(viewModel: EditItem.SaveItem.ViewModel) {
             dismissAction?()
+        }
+        
+        private func isNameProvided() -> Bool {
+            itemName.isEmpty == false
         }
 
         private func isNameChanged() -> Bool {
@@ -50,9 +70,9 @@ extension EditItemView {
         private func isDetailsChanged() -> Bool {
             itemDetails.trimmingCharacters(in: .whitespaces) != originalItem.details
         }
-
-        private func isNameProvided() -> Bool {
-            itemName.isEmpty == false
+        
+        private func isCategoryChanged() -> Bool {
+            itemCategory.trimmingCharacters(in: .whitespaces) != originalItem.category
         }
     }
 }

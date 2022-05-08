@@ -97,8 +97,12 @@ final class CoreDataMainRepository: NSObject, MainRepository {
             return
         }
 
-        let item = ShoppingItem.Factory.new(withName: itemName)
-        let itemEntity = ShoppingItemEntity.fromShoppingItem(item, listEntity, context: context)
+        let itemEntity = ShoppingItemEntity.fromShoppingItem(
+            ShoppingItem.Factory.new(withName: itemName),
+            shoppingListEntity: listEntity,
+            categoryEntity: nil,
+            context: context
+        )
 
         context.insert(itemEntity)
         context.saveChanges()
@@ -132,8 +136,22 @@ final class CoreDataMainRepository: NSObject, MainRepository {
 
         entity.name = item.name
         entity.details = item.details
+        entity.category = category(withName: item.category)
         entity.state = item.state.toInt()
+        
         context.saveChanges()
+    }
+    
+    private func category(withName name: String) -> CategoryEntity? {
+        guard !name.isEmpty else {
+            return nil
+        }
+        
+        let request: NSFetchRequest<CategoryEntity> = CategoryEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", name as CVarArg)
+        
+        let entities = try? context.fetch(request)
+        return entities?.first ?? .fromName(name, context: context)
     }
 }
 

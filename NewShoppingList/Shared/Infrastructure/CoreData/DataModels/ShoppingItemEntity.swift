@@ -6,6 +6,7 @@ class ShoppingItemEntity: NSManagedObject, Identifiable {
     @NSManaged var id: UUID
     @NSManaged var name: String
     @NSManaged var details: String
+    @NSManaged var category: CategoryEntity?
     @NSManaged var state: Int
     @NSManaged var shoppingList: ShoppingListEntity
 
@@ -30,20 +31,23 @@ extension ShoppingItemEntity {
             id: .fromUUid(id),
             name: name,
             details: details,
+            category: category?.name ?? "",
             state: .fromInt(state)
         )
     }
-
+    
     static func fromShoppingItem(
         _ shoppingItem: ShoppingItem,
-        _ shoppingListEntity: ShoppingListEntity,
+        shoppingListEntity: ShoppingListEntity,
+        categoryEntity: CategoryEntity?,
         context: NSManagedObjectContext
     ) -> ShoppingItemEntity {
         let entity = ShoppingItemEntity(context: context)
         entity.id = shoppingItem.id.toUuid()
         entity.name = shoppingItem.name
-         entity.details = shoppingItem.details
+        entity.details = shoppingItem.details
         entity.state = shoppingItem.state.toInt()
+        entity.category = categoryEntity
         entity.shoppingList = shoppingListEntity
         return entity
     }
